@@ -1,0 +1,50 @@
+.card-provider {
+  overflow: hidden;
+  border: solid;
+  border-width: 1px;
+  color: black;
+  background-color: white;
+}
+
+
+
+
+.card-provider h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-provider p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.people-icon, p.people-icon {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+}
+
+.star {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.card-provider-infos {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+
+
+
+
+
+
+

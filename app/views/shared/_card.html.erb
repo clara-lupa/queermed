@@ -1,0 +1,12 @@
+<div class="card-provider">
+  <div class="card-provider-infos">
+    <div>
+      <% @providers.each do |provider| %>
+        <h2><%= provider.title provider.first_name provider.last_name %></h2>
+      <% end %>
+      <% if @location %>
+        <p>Distance: <%= instrument.distance(location).round(1) %>km</p>
+      <% end %>
+    </div>
+  </div>
+</div>

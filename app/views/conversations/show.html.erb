@@ -1,0 +1,6 @@
+<h1>Conversations#show</h1>
+  <ul>
+  <% @conversation.messages.reverse.each do |message| %>
+    <li> <%= message.content %> <br> by <%= message.user.email %> </li>
+  <% end %>
+  </ul>
