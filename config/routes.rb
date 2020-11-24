@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'messages/index'
   devise_for :users
   root to: 'pages#home'
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :providers, only: [:index, :show]
 
@@ -12,4 +13,5 @@ Rails.application.routes.draw do
   end
 
   # how to nest the post request for new conversations? it transmit somehow information about the user who is on the button we have clicked on to the post request. idea: do an insane nesting: /providers/:id/reviews/:id/conversation/new
+
 end
