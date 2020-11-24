@@ -13,5 +13,7 @@ class ProvidersController < ApplicationController
 
   def show
     @provider = Provider.find(params[:id])
+    @review = Review.new
+    @reviews = @provider.reviews
   end
 end

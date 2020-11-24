@@ -1,4 +1,4 @@
-<%= simple_form_for [ provider, review ] do |f| %>
+<%= simple_form_for [ provider, review ],remote:false do |f| %>
   <%= f.input :content %>
   <%= f.submit "Submit review", class: "btn btn-primary" %>
 <% end %>
