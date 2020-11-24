@@ -3,4 +3,8 @@ class Provider < ApplicationRecord
   validates :last_name, presence: true
   validates :specialty, presence: true
   validates :address, presence: true
+
+  has_many :reviews, dependent: :destroy
+  has_many :shortlists, dependent: :destroy
+  has_many :providers, through: :shortlists
 end

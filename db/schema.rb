@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2020_11_23_172531) do
 
   # These are extensions that must be enabled in order to support this database
@@ -39,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_11_23_172531) do
     t.string "first_name"
     t.string "last_name"
     t.string "title"
-    t.string "speciality"
+    t.string "specialty"
     t.string "address"
     t.string "homepage"
     t.string "email"
