@@ -1,69 +1,83 @@
 .container-content {
   display: flex;
+  width: 90vw;
+  margin: 0 auto;
+  justify-content: space-evenly;
+
+
 }
 
 .container-index {
-  margin-left: 10vw;
   display: inline-block;
   position: relative;
-  width: 40%;
+  width: 30vw;
 
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  width: 40vw;
+  width: 30vw;
   grid-gap: 32px;
+}
+
+.container-index .form-inline .form-group {
+  width: 30vw !important;
+}
+
+.container-index .form-inline .form-control {
+  width: 20vw !important;
 }
 
 .search-form {
   margin-left: 10vw;
   margin-bottom: 32px;
+  width: 30vw;
+  margin-top: 8vh;
 
 }
 .cards-grid a:hover:nth-child(7n+1){
-  box-shadow: 0px 0px 300px 4px $pink;
+  box-shadow: 0px 0px 200px 4px $pink;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+2){
-  box-shadow: 0px 0px 300px 4px $baby-blue;
+  box-shadow: 0px 0px 200px 4px $baby-blue;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+3){
-  box-shadow: 0px 0px 300px 4px $brown;
+  box-shadow: 0px 0px 200px 4px $brown;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+4){
-  box-shadow: 0px 0px 300px 4px $red;
+  box-shadow: 0px 0px 200px 4px $red;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+5){
-  box-shadow: 0px 0px 300px 4px $orange;
+  box-shadow: 0px 0px 200px 4px $orange;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+6){
-  box-shadow: 0px 0px 300px 4px $yellow;
+  box-shadow: 0px 0px 200px 4px $yellow;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+7){
-  box-shadow: 0px 0px 300px 4px $green;
+  box-shadow: 0px 0px 200px 4px $green;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+8){
-  box-shadow: 0px 0px 300px 4px $blue;
+  box-shadow: 0px 0px 200px 4px $blue;
   z-index: 300;
 }
 
 .cards-grid a:hover:nth-child(7n+9){
-  box-shadow: 0px 0px 300px 4px $purple;
+  box-shadow: 0px 0px 200px 4px $purple;
   z-index: 300;
 }
 

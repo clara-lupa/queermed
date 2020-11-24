@@ -1,18 +1,50 @@
-// Specific CSS for your home-page
-
 .container.home {
-  width: 40vw!important;
-  padding: 0;
+  width: 70vw !important;
+}
+
+.header {
+  -webkit-animation: pulse 45s infinite alternate;
+  height: 30vh;
+  margin-bottom: 5vh;
+  margin-top: 8vh;
+  padding: 32px;
+  border: solid;
+  border-width: 1px;
+  background-color: white;
+  width: 70vw;
 }
 
 
+@keyframes pulse {
+    0%    { box-shadow: 0px 0px 200px 4px $pink; }
+    12.5% { box-shadow: 0px 0px 200px 4px $baby-blue; }
+    25%   { box-shadow: 0px 0px 200px 4px $brown;  }
+    37.5% { box-shadow: 0px 0px 200px 4px $red; }
+    50%   { box-shadow: 0px 0px 200px 4px $orange; }
+    62.5% { box-shadow: 0px 0px 200px 4px $yellow; }
+    75%   { box-shadow: 0px 0px 200px 4px $green; }
+    87.5% { box-shadow: 0px 0px 200px 4px $blue; }
+    100%  { box-shadow: 0px 0px 200px 4px $purple; }
 
-.container.intro {
-  width: 40vw !important;
+}
+
+.form-inline .form-group {
+  width: 70vw !important;
+  display: flex !important;
+}
+.form-inline .form-group .form-control {
+/*  width: 55vw !important;
+*/  flex-grow: 1;
+    margin-right: 2vw;
+}
+
+.intro {
   border: solid;
   border-width: 1px;
-  padding: 16px;
-  margin-bottom: 20vh;
+  background-color: white;
+  padding: 2vw;
+  width: 70vw;
+  margin-bottom: 8vh;
 }
 
 
@@ -26,13 +58,9 @@
   margin-bottom: 5vh;
 }
 
-.header {
-  margin-bottom: 0vh;
-}
 
 .intro {
-  margin-top: 20vh;
-
+  margin-top: 10vh;
 }
 
 .intro p {
