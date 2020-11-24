@@ -28,13 +28,14 @@ end
 puts "creating 10 providers"
 
 10.times do
-  Provider.create(
+  Provider.create!(
     first_name: Faker::Name.first_name,
     last_name: Faker::Name.last_name,
     title: "Dr.",
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
-    specialty: SPECIALTIES.sample
+    specialty: SPECIALTIES.sample,
+    address: "Berlin"
     )
 end
 
