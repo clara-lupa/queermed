@@ -1,2 +1,5 @@
-<h1>Providers#show</h1>
-<%= @provider.last_name %>
+
+<div class="container">
+  <h1> <%= @provider.title if @provider.title %> <%= @provider.first_name %> <%= @provider.last_name%> </h1>
+  <p> <%= @provider.specialty %> </p>
+</div>
