@@ -1,11 +1,29 @@
 
 
-<div class="container">
-  <h1> <%= @provider.title if @provider.title %> <%= @provider.first_name %> <%= @provider.last_name%> </h1>
-  <p> <%= @provider.specialty %> </p>
+
+<div class="container-content-show">
+  <div class="row justify-content-between">
+    <div class="col-7">
+      <div class="container-left">
+        <div class="header">
+          <h3> <%= @provider.title if @provider.title %> <%= @provider.first_name %> <%= @provider.last_name%> </h3>
+          <p> <%= @provider.specialty %> </p>
+        </div>
+        <div class="container-reviews">
+          <%#= render "reviews/review_form", provider: @provider, review: @review %>
+          <%# @reviews.each do |review| %>
+            <%#= render "reviews/card", review: review  %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <div class="container-right">
+        <h1>Test</h1>
+      </div>
+    </div>
+  </div>
 </div>
 
-<%= render "reviews/review_form", provider: @provider, review: @review %>
-<% @reviews.each do |review| %>
-<%= render "reviews/card", review: review  %>
-<% end %>
+
+
