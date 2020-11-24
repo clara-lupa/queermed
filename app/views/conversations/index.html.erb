@@ -1,0 +1,7 @@
+<h1>Conversations#index</h1>
+
+<ul>
+  <% @conversations.each do |conversation| %>
+    <li> initiated by <%= conversation.user1.email %>, with <%= conversation.user2.email %>  </li>
+  <% end %>
+</ul>

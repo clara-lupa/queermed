@@ -1,0 +1,21 @@
+<%= form_tag providers_path, method: :get, class: "form-inline search-form" do %>
+  <div class="form-group">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "find healthcare provider"
+    %>
+  <% if false %>
+  <div class="form-group">
+    <%= text_field_tag :location,
+      params[:location],
+      class: "form-control address-input",
+      placeholder: "Where are you at?",
+      required: true
+    %>
+  </div>
+  <% end %>
+
+  <%= button_tag "Search", type: "submit", class: "button-black" %>
+<% end %>
+  </div>

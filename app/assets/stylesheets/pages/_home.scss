@@ -1,1 +1,39 @@
 // Specific CSS for your home-page
+
+.container.home {
+  width: 40vw!important;
+  padding: 0;
+}
+
+
+
+.container.intro {
+  width: 40vw !important;
+  border: solid;
+  border-width: 1px;
+  padding: 16px;
+  margin-bottom: 20vh;
+}
+
+
+.header h1 {
+  font-size: 8em;
+
+}
+
+.header p {
+  font-size: 1.5em;
+  margin-bottom: 5vh;
+}
+
+.header {
+  margin-bottom: 0vh;
+}
+
+.intro {
+  margin-top: 20vh;
+
+}
+
+.intro p {
+}

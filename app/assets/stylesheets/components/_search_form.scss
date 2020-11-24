@@ -1,0 +1,17 @@
+.form-group {
+  display: flex;
+  width: 40vw !important;
+  justify-content: space-between;
+
+}
+
+.form-control {
+  border: solid;
+  border-width: 1px;
+  width: 32vw !important;
+}
+
+
+.form-inline.search-form {
+  margin-left: 0px;
+}
