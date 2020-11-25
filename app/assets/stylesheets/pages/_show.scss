@@ -1,0 +1,41 @@
+.columns-container {
+  display: flex;
+}
+
+.column-left {
+  width: 60%;
+  padding-right: 8px;
+}
+
+.column-right {
+  width: 40%;
+  padding-left: 8px;
+  position: sticky;
+}
+
+.provider-info {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 8px;
+  .shortlisted {
+    font-size: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+  }
+  .name {
+    flex-grow: 1;
+  }
+  h1 {
+    font-size: 24px;
+  }
+
+}
+.review-cards {
+  border: black 1px solid;
+  padding: 16px;
+  h2 {
+    font-size: 18px;
+  }
+}
+
