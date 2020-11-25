@@ -15,4 +15,7 @@ class Provider < ApplicationRecord
     distance_to(Geocoder.search(location).first.coordinates).round(3) if location
   end
 
+  def has_recommendations?
+    reviews.any? { |review| !review.content.present? }
+  end
 end
