@@ -15,6 +15,7 @@ class Provider < ApplicationRecord
     if users.include?(user)
       shortlists.find_by(user: user)
     end
+  end
 
   def distance(location)
     # returns distance in km, argument should be an address string
