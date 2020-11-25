@@ -2,12 +2,12 @@
   <h2>Contact</h2>
   <div class="columns-container">
     <div class="left-column">
-      <%= provider.street %>
-
+      <p> <%= provider.street %> </p>
+      <p> <%= provider.city %> </p>
     </div>
     <div class="right-co">
-      <%= provider.phone_number if provider.phone_number %>
-      <%= provider.email if provider.email %>
+      <p> <%= provider.phone_number if provider.phone_number %> </p>
+      <a href= <%= provider.homepage%> target="_blank" >Visit Homepage</a>
     </div>
   </div>
 </div>

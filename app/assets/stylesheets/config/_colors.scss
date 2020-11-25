@@ -6,31 +6,20 @@ $gray: #0E0000;
 $light-gray: #F4F4F4;
 
 $pink: #FFAEC8;
+$pink-transp: rgba(255, 174, 200, 0.7);
 $baby-blue: #73EDE4;
 $brown: #603815;
 $red: #E30C12;
 $orange: #F18816;
+$orange-transp: rgba(241, 136, 22, 0.4);
 $yellow: #E5FE02;
+$yellow-transp: rgba(229, 254, 2, 0.4);
 $green: #07C002;
 $blue: #031A9A;
 $purple: #6E2381;
 
-.neon-yellow {
-  border: none !important;
-  box-shadow: 0 0 0px 5px #fff, 0 0 10px 10px #fbff04, 0 0 10px 15px #fbff04;
-}
 
-.neon-pink {
-  box-shadow: 0 -40px 100px,
-    0 -40px 100px inset,
-    0 0 2px,
-    0 0 2px inset,
-    0 0 5em #4ff,
-    0 0 5em #4ff inset,
-    0 0 0.5em #4ff,
-    0 0 0.5em #4ff inset,
-    0 0 0.1em #4ff,
-    0 0 0.1em #4ff inset,
-    0 10px 3px #000,
-    0 10px 3px #000 inset;
-}
+
+
+$purple-transp: rgba(110, 35, 129, 0.4);
+

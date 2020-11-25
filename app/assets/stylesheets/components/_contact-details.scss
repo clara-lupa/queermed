@@ -1,12 +1,10 @@
 .contact-details {
   padding: 8px;
   border: 1px black solid;
-  margin-bottom: 16px;
-  p, h2 {
-    font-size: 18px;
-    margin-bottom: 0;
-  }
+  margin-bottom: 3rem;
+  position: relative;
   .right-column, .left-column {
     width: 50%;
   }
+  box-shadow: 0px 0px 20px 2px $orange-transp;
 }
