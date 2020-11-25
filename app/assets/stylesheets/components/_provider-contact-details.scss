@@ -1,0 +1,12 @@
+.contact-details {
+  padding: 8px;
+  border: 1px black solid;
+  margin-bottom: 16px;
+  p, h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .right-column, .left-column {
+    width: 50%;
+  }
+}
