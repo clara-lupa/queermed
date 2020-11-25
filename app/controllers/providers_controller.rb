@@ -10,16 +10,16 @@ class ProvidersController < ApplicationController
     else
       @providers = Provider.all
     end
-    # following is the setup for the map, delete if you don't need it
-    # @markers = @providers.geocoded.map do |provider|
-    #   {
-    #     lat: provider.latitude,
-    #     lng: provider.longitude,
-    #     infoWindow: render_to_string(partial: "info_window", locals: { provider: provider })
-    #   }
-    # end
 
-    # @providers = @providers.sort_by{ |provider| provider.distance(@location) }
+    @markers = @providers.geocoded.map do |provider|
+      {
+        lat: provider.latitude,
+        lng: provider.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { provider: provider })
+      }
+    end
+
+    @providers = @providers.sort_by{ |provider| provider.distance(@location) }
   end
 
   def show
