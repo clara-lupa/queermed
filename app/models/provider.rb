@@ -7,4 +7,10 @@ class Provider < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_many :shortlists, dependent: :destroy
   has_many :users, through: :shortlists
+
+  # private
+
+  def has_recommendations?
+    reviews.any? { |review| !review.content.present? }
+  end
 end
