@@ -21,7 +21,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'faker'
 gem 'geocoder'
-gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 # Use Active Model has_secure_password
