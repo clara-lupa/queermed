@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def shortlist
-
+    @user = current_user #check shortlist for current user
+    @providers = Shortlist.all.map { |shortlist|
+      shortlist.provider
+    }
   end
 end
+

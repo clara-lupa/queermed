@@ -1,9 +1,12 @@
 <div class="card-provider">
   <div class="card-provider-infos">
     <div>
-      <% @providers.each do |provider| %>
-        <h2><%= provider.title provider.first_name provider.last_name %></h2>
-      <% end %>
+        <p>"Hey!"</p>
+        <h2><%= provider.title %> <%= provider.first_name %> <%= provider.last_name %></h2>
+        <%= link_to "Destroy", shortlist_path(provider.shortlisted(user)), method: :delete %>
+        <% unless current_page?(controller: pages) %>
+          <%= link_to "Create", provider_shortlist_path(provider, provider.shortlisted(user)), method: :post %>
+        <% end %>
       <% if @location %>
         <p>Distance: <%= instrument.distance(location).round(1) %>km</p>
       <% end %>
