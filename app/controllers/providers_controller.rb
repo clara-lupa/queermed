@@ -24,5 +24,9 @@ class ProvidersController < ApplicationController
 
   def show
     @provider = Provider.find(params[:id])
+    regex_remove_city = /,\s.*/
+    regex_remove_street = /.*,\s/
+    @street = @provider.address.gsub(regex_remove_city, "")
+    @city = @provider.address.gsub(regex_remove_street, "")
   end
 end
