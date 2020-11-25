@@ -37,7 +37,8 @@ puts "creating 10 providers"
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
     specialty: SPECIALTIES.sample,
-    address: "Berlin"
+    street: "Hermannstr. 48",
+    city: "Berlin"
     )
 end
 
