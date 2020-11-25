@@ -19,3 +19,18 @@ $purple: #6E2381;
   border: none !important;
   box-shadow: 0 0 0px 5px #fff, 0 0 10px 10px #fbff04, 0 0 10px 15px #fbff04;
 }
+
+.neon-pink {
+  box-shadow: 0 -40px 100px,
+    0 -40px 100px inset,
+    0 0 2px,
+    0 0 2px inset,
+    0 0 5em #4ff,
+    0 0 5em #4ff inset,
+    0 0 0.5em #4ff,
+    0 0 0.5em #4ff inset,
+    0 0 0.1em #4ff,
+    0 0 0.1em #4ff inset,
+    0 10px 3px #000,
+    0 10px 3px #000 inset;
+}
