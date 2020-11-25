@@ -4,7 +4,6 @@ const initAutocomplete = () => {
   const addressInput = document.querySelector('.address-input');
   if (addressInput) {
     places({ container: addressInput });
-    console.log("test")
   }
 };
 
