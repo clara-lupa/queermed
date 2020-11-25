@@ -13,3 +13,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+.main-content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  .content {
+    flex-grow: 1;
+  }
+}
