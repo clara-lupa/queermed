@@ -10,9 +10,9 @@
           <p> <%= @provider.specialty %> </p>
         </div>
         <div class="container-reviews">
-          <%#= render "reviews/review_form", provider: @provider, review: @review %>
-          <%# @reviews.each do |review| %>
-            <%#= render "reviews/card", review: review  %>
+          <%= render "reviews/review_form", provider: @provider, review: @review %>
+          <% @reviews.each do |review| %>
+            <%= render "reviews/card", review: review  %>
           <% end %>
         </div>
       </div>
