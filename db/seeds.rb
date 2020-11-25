@@ -10,6 +10,7 @@ require 'faker'
 
 Provider.destroy_all
 User.destroy_all
+Review.destroy_all
 
 PASSWORD = "123456"
 USERS = %w[igor dan magda clara]
@@ -20,6 +21,7 @@ puts "creating 4 users"
 
 USERS.each do |user|
   User.create(
+    nickname: user,
     email: "#{user}@test.org",
     password: PASSWORD
     )
@@ -35,9 +37,18 @@ puts "creating 10 providers"
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
     specialty: SPECIALTIES.sample,
-    address: "Berlin"
+    street: "Hermannstr. 48",
+    city: "Berlin"
     )
 end
 
+puts "creating 30 reviews"
+30.times do
+  Review.create!(
+    content: Faker::Quote.famous_last_words,
+    user: User.all.sample,
+    provider: Provider.all.sample
+    )
+end
 puts "finished"
 

@@ -1,0 +1,6 @@
+<div class="review-cards">
+  <h2> Reviews</h2>
+  <% provider.reviews.each do |review| %>
+    <%= render "reviews/card", review: review %>
+  <% end %>
+</div>
