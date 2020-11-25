@@ -14,3 +14,8 @@ $yellow: #E5FE02;
 $green: #07C002;
 $blue: #031A9A;
 $purple: #6E2381;
+
+.neon-yellow {
+  border: none !important;
+  box-shadow: 0 0 0px 5px #fff, 0 0 10px 10px #fbff04, 0 0 10px 15px #fbff04;
+}
