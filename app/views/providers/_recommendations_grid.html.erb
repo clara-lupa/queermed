@@ -1,0 +1,13 @@
+
+<div class="recommendations">
+  <h2>Ask your peers about <%= "#{provider.title} #{provider.first_name} #{provider.last_name}" %> </h2>
+  <% if provider.has_recommendations? %>
+    <div class="recommendations-grid">
+      <% provider.reviews.each do |review| %>
+        <%= render "user_contact", user: review.user unless review.content.present? %>
+      <% end %>
+    </div>
+  <% else %>
+    <p>This provider has no recommendations yet.</p>
+  <% end %>
+</div>

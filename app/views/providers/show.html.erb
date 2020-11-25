@@ -1,7 +1,15 @@
 
 
-<div class="container">
-  <h1> <%= @provider.title if @provider.title %> <%= @provider.first_name %> <%= @provider.last_name%> </h1>
-  <p> <%= @provider.specialty %> </p>
+<div class="container columns-container">
+  <div class="column-left">
+    <%= render "provider_info", provider: @provider %>
+    <%= render "review_cards", provider: @provider %>
+  </div>
+
+  <div class="column-right">
+    <%= render "map_show", provider: @provider %>
+    <%= render "contact_details", provider: @provider %>
+    <%= render "recommendations_grid", provider: @provider %>
+  </div>
 </div>
 

@@ -4,7 +4,7 @@
     <h6><%= provider.specialty %></h6>
     <p><%= image_tag "favourite", class:"star" %></p>
     <% if @location %>
-      <p><%= instrument.distance(location).round(1) %>km</p>
+      <p><%= provider.distance(@location).round(1) %>km</p>
     <% else %>
       <p>4.5km</p>
     <% end %>

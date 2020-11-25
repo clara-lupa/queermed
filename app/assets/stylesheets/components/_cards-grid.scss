@@ -3,9 +3,9 @@
   width: 90vw;
   margin: 0 auto;
   justify-content: space-evenly;
-
-
 }
+
+
 
 .container-index {
   display: inline-block;
@@ -21,8 +21,24 @@
   grid-gap: 32px;
 }
 
-.container-index .form-inline .form-group {
+
+.container-index .form-inline.search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 30vw !important;
+}
+
+.container-index .form-inline .form-group {
+  width: unset !important;
+}
+
+.container-index .form-inline .form-group #query{
+  width: 12vw !important;
+}
+
+.container-index .form-inline .form-group .address-input{
+  width: 10vw !important;
 }
 
 .container-index .form-inline .form-control {

@@ -1,5 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :provider
   belongs_to :user
-  valdidates :content, presence: true
+  # i deleted the presence validation for content bc actually content can be empty
+  # (in that case the user has just left a recommendation without review)
+  validates :user, :provider, presence: true
 end

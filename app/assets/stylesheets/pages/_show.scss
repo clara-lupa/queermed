@@ -1,0 +1,50 @@
+p, h2, a {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+h1 {
+    font-size: 24px;
+  }
+
+.columns-container {
+  display: flex;
+}
+
+.column-left {
+  width: 70%;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.column-right {
+  width: 30%;
+  padding-left: 1rem;
+  padding-top: 1rem;
+  position: sticky;
+}
+
+.provider-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  .shortlisted {
+    font-size: 24px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display: flex;
+  }
+  .name {
+    flex-grow: 1;
+  }
+}
+.review-cards {
+  border: black 1px solid;
+  padding: 1rem;
+  position: relative;
+  box-shadow: 0px 0px 20px 2px $pink-transp;
+}
+
+a {
+  color: black;
+}

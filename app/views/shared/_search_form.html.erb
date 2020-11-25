@@ -3,19 +3,16 @@
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
-      placeholder: "find healthcare provider"
+      placeholder: "Search for ..."
     %>
-  <% if false %>
+  </div>
   <div class="form-group">
     <%= text_field_tag :location,
       params[:location],
       class: "form-control address-input",
-      placeholder: "Where are you at?",
+      placeholder: "Where?",
       required: true
     %>
   </div>
-  <% end %>
-
   <%= button_tag "Search", type: "submit", class: "button-black" %>
 <% end %>
-  </div>
