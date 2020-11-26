@@ -15,6 +15,10 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <% Dir.glob('app/assets/images/avatar/*').map do |path| %>
+       <%= image_tag "avatar/#{ File.basename(path) }" %>
+    <% end.reduce(&:+) %>
+    <%= f.input :avatar, as: :select, collection: Dir.glob('app/assets/images/avatar/*').map {|path|[image_tag(("avatar/#{ File.basename(path) }")).html_safe,File.basename(path)]}   %>
   </div>
 
   <div class="form-actions">
