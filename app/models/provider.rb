@@ -10,9 +10,9 @@ class Provider < ApplicationRecord
   has_many :shortlists, dependent: :destroy
   has_many :users, through: :shortlists
 
-  def distance(location)
+  def distance(coordinates)
     # returns distance in km, argument should be an address string
-    distance_to(Geocoder.search(location).first.coordinates).round(3) if location
+    distance_to(coordinates).round(3) if coordinates
   end
 
   def has_recommendations?

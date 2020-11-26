@@ -1,7 +1,6 @@
 class ProvidersController < ApplicationController
 
   def index
-
     @user = current_user
     @location = params[:location]
     if params[:query].present?
@@ -19,7 +18,11 @@ class ProvidersController < ApplicationController
       }
     end
 
-    @providers = @providers.sort_by{ |provider| provider.distance(@location) }
+    if params[:location]
+      @coordinates = Geocoder.search(@location).first.coordinates
+      @providers = @providers.sort_by { |provider| provider.distance(@coordinates) }
+    end
+
   end
 
   def show
