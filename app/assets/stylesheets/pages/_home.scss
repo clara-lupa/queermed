@@ -1,5 +1,13 @@
+.content {
+
+}
+
 .container.home {
-  width: 70vw !important;
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 70vw;
+  margin: 0 auto;
+  grid-auto-flow: row;
 }
 
 .header {
@@ -11,7 +19,7 @@
   border: solid;
   border-width: 1px;
   background-color: white;
-  width: 70vw;
+
   box-sizing: unset;
 }
 
@@ -32,7 +40,7 @@
   border-width: 1px;
   background-color: white;
   padding: 2vw;
-  width: 70vw;
+
   margin-bottom: 8vh;
 }
 
@@ -49,14 +57,14 @@
 
 
 .container.home .form-inline.search-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 70vw !important;
+
+
 }
 
 .container.home .form-inline.search-form .form-group {
-  width: 30vw !important;
+}
+
+span.algolia-places {
 }
 
 .intro {
@@ -78,11 +86,11 @@
 
 
 /*.form-inline .form-group {
-  width: 70vw !important;
+
   display: flex !important
 }*/
 /*.form-inline .form-group .form-control {
-*//*  width: 55vw !important;
+*//*  width: 55vw
 */  /*flex-grow: 1;
     margin-right: 2vw;
 }*/

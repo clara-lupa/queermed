@@ -5,13 +5,10 @@
   justify-content: space-evenly;
 }
 
-
-
 .container-index {
   display: inline-block;
   position: relative;
   width: 30vw;
-
 }
 
 .cards-grid {
@@ -21,37 +18,16 @@
   grid-gap: 32px;
 }
 
-
-.container-index .form-inline.search-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 30vw !important;
-}
-
-.container-index .form-inline .form-group {
-  width: unset !important;
-}
-
-.container-index .form-inline .form-group #query{
-  width: 12vw !important;
-}
-
-.container-index .form-inline .form-group .address-input{
-  width: 10vw !important;
-}
-
-.container-index .form-inline .form-control {
-  width: 20vw !important;
-}
-
 .search-form {
-  margin-left: 10vw;
-  margin-bottom: 32px;
-  width: 30vw;
-  margin-top: 8vh;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+.search-form .button-black {
+  margin-right: 5px;
 
 }
+
 .cards-grid a:hover:nth-child(7n+1){
   box-shadow: 0px 0px 200px 4px $pink;
   z-index: 300;
