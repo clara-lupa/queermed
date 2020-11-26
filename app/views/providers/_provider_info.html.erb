@@ -7,6 +7,8 @@
         <p> <%= provider.specialty %> </p>
       </div>
       <div class="provider-info-right">
-        <button class="button-black">Review</button>
+        <%= link_to @path_back do%>
+          <button class="button-black">Back to search</button>
+        <% end %>
       </div>
     </div>
