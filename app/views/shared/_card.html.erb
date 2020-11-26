@@ -10,9 +10,9 @@
     <% end %>
     <p class="people-icon">6 <%= image_tag "people" %></p>
     <% if provider.shortlisted(current_user) %>
-      <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), class: "star", method: :delete) %>
+      <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), class: "star", remote: true, method: :delete) %>
     <% else %>
-      <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), class: "star", method: :post) %>
+      <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), class: "star", remote: true, method: :post) %>
     <% end %>
   </div>
 </div>

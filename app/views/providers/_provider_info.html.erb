@@ -3,7 +3,7 @@
         <% if provider.shortlisted(current_user) %>
           <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), method: :delete) %>
         <% else %>
-          <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), remote: true, method: :post) %>
+          <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), method: :post) %>
         <% end %>
       </div>
       <div class="name">
