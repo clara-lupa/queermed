@@ -5,7 +5,13 @@
   </div>
   <div class="review-card-info" >
     <div class="review-card-info-name">
-      <%= review.user.nickname %>
+      <div class="user-contact mt-2 p-0 user-position">
+        <div class="image-container">
+          <%= image_tag "avatar/avatar_0#{rand(7)+1}.svg" %>
+        </div>
+        <p class="name"> <%= review.user.nickname %> </p>
+        <p>  <i class="fas fa-envelope"></i></p>
+      </div>
       <h3><%= time_ago_in_words(review.created_at) %> ago</h3>
     </div>
   </div>
