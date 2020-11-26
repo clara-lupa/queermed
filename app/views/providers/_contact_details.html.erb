@@ -1,13 +1,11 @@
 <div class="contact-details">
   <h2>Contact</h2>
-  <div class="columns-container">
-    <div class="left-column">
-      <p> <%= provider.street %> </p>
-      <p> <%= provider.city %> </p>
-    </div>
-    <div class="right-co">
-      <p> <%= provider.phone_number if provider.phone_number %> </p>
-      <a href= <%= provider.homepage%> target="_blank" >Visit Homepage</a>
+  <div class="contact-container">
+    <div class="contact-grid">
+      <p class="street"> <%= @street %> </p>
+      <p class="city"> <%= @city %> </p>
+      <p class="phone"> <%= provider.phone_number if provider.phone_number %> </p>
+      <a class="homepage" href= <%= provider.homepage%> target="_blank" >Visit Homepage</a>
     </div>
   </div>
 </div>

@@ -2,12 +2,12 @@
   <div class="card-provider-infos">
     <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
     <h6><%= provider.specialty %></h6>
-    <p><%= image_tag "favourite", class:"star" %></p>
+    <p><%= image_tag "favourite.svg", class:"star" %></p>
     <% if @location %>
       <p><%= provider.distance(@location).round(1) %>km</p>
     <% else %>
       <p>4.5km</p>
     <% end %>
-    <p class="people-icon">6 <%= image_tag "people" %></p>
+    <p class="people-icon">6 <%= image_tag "people.svg" %></p>
   </div>
 </div>

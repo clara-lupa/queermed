@@ -1,0 +1,58 @@
+.review-card {
+  border: 1px solid black;
+  margin-top: 8px;
+  padding: 8px;
+  .review-card-content {
+    font-family: "Roboto";
+    font-weight: 300 !important;
+    font-size: 18px;
+  }
+  .review-card-info {
+    font-family: "Roboto";
+    font-weight: bold;
+    font-size: 14px;
+  }
+}
+
+h3 {
+  font-family: "Roboto";
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.review-card-info-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#review_content,
+.form-group.review_content {
+   width: 100% !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

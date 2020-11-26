@@ -5,7 +5,9 @@ class User < ApplicationRecord
   has_many :user2_conversations, class_name: "Conversation", foreign_key: "user2_id"
   has_many :shortlists
   has_many :providers, through: :shortlists
+  has_one_attached :photo
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
 end

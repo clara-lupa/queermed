@@ -3,14 +3,18 @@
   background: white;
   border-bottom: solid;
   border-width: 2px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
 
 }
+
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
+.navbar-lewagon img.navbar-brand {
   width: 40px;
 }
 

@@ -8,3 +8,28 @@
   }
   box-shadow: 0px 0px 20px 2px $orange-transp;
 }
+
+.contact-grid {
+  display: grid;
+  grid-template-areas: "street phone"
+                       "city homepage"
+}
+
+.street {
+  grid-area: street;
+}
+
+.city {
+  grid-area: city;
+
+}
+
+.phone {
+  grid-area: phone;
+
+}
+
+.homepage {
+ grid-area: homepage;
+
+}
