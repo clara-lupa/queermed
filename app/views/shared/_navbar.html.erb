@@ -1,7 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
-    <%= image_tag "queermed-logo" %>
-  <% end %>
+    <%= image_tag "queermed-logo", class: "navbar-brand" %>
   <div class="nav-links">
     <li class="nav-item">
       <%= link_to "find healthcare provider", root_path, class: "nav-link" %>
@@ -25,7 +23,7 @@
           <%= image_tag "message_active", class: "message" %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Inbox", "#", class: "dropdown-item" %>
-            <%= link_to "Favorites", "#", class: "dropdown-item" %>
+            <%= link_to "Shortlist", "#", class: "dropdown-item" %>
             <%= link_to "Profile", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
