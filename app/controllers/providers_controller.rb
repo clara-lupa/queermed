@@ -19,8 +19,9 @@ class ProvidersController < ApplicationController
     end
 
     if params[:location]
-      @coordinates = Geocoder.search(@location).first.coordinates
-      @providers = @providers.sort_by { |provider| provider.distance(@coordinates) }
+      geocoded_location = Geocoder.search(@location)
+      @coordinates = geocoded_location.first.coordinates if geocoded_location.present?
+      @providers = @providers.sort_by { |provider| provider.distance(@coordinates) } if @coordinates
     end
 
   end
