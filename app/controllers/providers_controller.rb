@@ -6,6 +6,7 @@ class ProvidersController < ApplicationController
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR title ILIKE :query OR specialty ILIKE :query"
       @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
+      session[:last_search] = request.url
     else
       @providers = Provider.all
     end
@@ -35,5 +36,6 @@ class ProvidersController < ApplicationController
     @review = Review.new
     @reviews = @provider.reviews
     @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
+    @path_back = session[:last_search] || providers_path
   end
 end
