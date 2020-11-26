@@ -34,6 +34,15 @@ const initMapbox = () => {
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
   }
+
+  const mapElementShow = document.getElementById('map-show');
+
+  if (mapElementShow) { // only build a map if there's a div#map to inject into
+    const map = buildMap(mapElementShow);
+    const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers);
+    fitMapToMarkers(map, markers);
+  }
 };
 
 export { initMapbox };

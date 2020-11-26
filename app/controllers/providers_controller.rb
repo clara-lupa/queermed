@@ -30,6 +30,6 @@ class ProvidersController < ApplicationController
     @city = @provider.address.gsub(regex_remove_street, "")
     @review = Review.new
     @reviews = @provider.reviews
-
+    @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
   end
 end
