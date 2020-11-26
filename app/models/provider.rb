@@ -12,7 +12,7 @@ class Provider < ApplicationRecord
 
   def distance(location)
     # returns distance in km, argument should be an address string
-    distance_to(Geocoder.search(location).first.coordinates).round(3) if location
+    distance_to(location.coordinates).round(3) if location
   end
 
   def has_recommendations?
