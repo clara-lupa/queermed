@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_11_25_165316) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -65,10 +66,9 @@ ActiveRecord::Schema.define(version: 2020_11_25_165316) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "street"
-    t.string "city"
     t.float "latitude"
     t.float "longitude"
+    t.string "address"
   end
 
   create_table "reviews", force: :cascade do |t|

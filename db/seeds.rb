@@ -14,8 +14,8 @@ Review.destroy_all
 
 PASSWORD = "123456"
 USERS = %w[igor dan magda clara]
-SPECIALTIES = %w[Psychotherapist Gynecologist Dermatologist Physiotherapist Dentist]
-
+SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Gynecologist Dermatologist Physiotherapist Dentist]
+ADDRESS = ["Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Sonnenallee 101, 12045 Berlin", "Rudi-Dutschke-Str. 26, 10969 Berlin"]
 
 puts "creating 20 random users"
 
@@ -38,8 +38,7 @@ puts "creating 10 providers with 0-5 recommendations"
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
     specialty: SPECIALTIES.sample,
-    street: "Hermannstr. 48",
-    city: "Berlin"
+    address: ADDRESS.sample,
     )
   number_of_recs = rand(6)
   recommenders = User.all.sample(number_of_recs)
