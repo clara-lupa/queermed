@@ -20,6 +20,7 @@ class ProvidersController < ApplicationController
     end
 
     @providers = @providers.sort_by{ |provider| provider.distance(@location) }
+
   end
 
   def show

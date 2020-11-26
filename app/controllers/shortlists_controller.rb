@@ -10,6 +10,6 @@ class ShortlistsController < ApplicationController
   def destroy
     @shortlist = Shortlist.find(params[:id])
     @shortlist.destroy
-    redirect_to shortlists_index_path
+    redirect_back(fallback_location: providers_path)
   end
 end
