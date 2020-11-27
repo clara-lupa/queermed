@@ -3,6 +3,7 @@ class ShortlistsController < ApplicationController
     @shortlist = Shortlist.new
     @shortlist.user = current_user
     @shortlist.provider = Provider.find(params[:provider_id])
+    console
     @shortlist.save
     redirect_back(fallback_location: providers_path)
   end
