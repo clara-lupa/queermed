@@ -39,4 +39,27 @@ class ProvidersController < ApplicationController
     @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
     @path_back = session[:last_search] || providers_path
   end
+
+  def new
+    @provider = Provider.new
+    @providers = Provider.all
+    @specialty_array = []
+    @providers.each { |provider|@specialty_array << provider.specialty }
+    @specialty_array = @specialty_array.uniq
+  end
+
+  def create
+    @provider = Provider.new(provider_params)
+    if @provider.save
+      redirect_to provider_path(@provider)
+    else
+      render :new
+    end
+  end
+
+  private
+  def provider_params
+    params.require(:provider).permit(:title, :first_name, :last_name, :specialty, :homepage, :email, :phone_number, :address)
+  end
 end
+
