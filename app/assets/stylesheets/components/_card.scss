@@ -31,7 +31,24 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  transition: 0.3s;
 }
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+#star {
+  transition: 0.3s;
+}
+
+#star:hover {
+  transform: scale(1.10);
+}
+
+
+
+
 .card-provider-infos {
   padding: 16px;
   display: flex;

@@ -2,7 +2,9 @@
   <div class="container-index">
     <div class="cards-grid">
       <% @providers.each do |provider| %>
-        <%= render "providers/card", provider: provider, user: @user %>
+        <%= link_to provider_path(provider) do  %>
+          <%= render "providers/card", provider: provider, user: @user %>
+        <% end %>
       <% end %>
     </div>
   </div>
