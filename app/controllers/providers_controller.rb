@@ -35,7 +35,7 @@ class ProvidersController < ApplicationController
     @street = @provider.address.gsub(regex_remove_city, "")
     @city = @provider.address.gsub(regex_remove_street, "")
     @review = Review.new
-    @reviews = @provider.reviews
+    @reviews = @provider.reviews.order({ created_at: :desc })
     @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
     @path_back = session[:last_search] || providers_path
   end
