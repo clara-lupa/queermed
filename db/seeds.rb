@@ -16,6 +16,8 @@ PASSWORD = "123456"
 USERS = %w[igor dan magda clara]
 SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Gynecologist Dermatologist Physiotherapist Dentist]
 ADDRESS = ["Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Sonnenallee 101, 12045 Berlin", "Rudi-Dutschke-Str. 26, 10969 Berlin"]
+AVATAR_BASE_PATH = "avatar/avatar_0"
+AVATAR_SUFFIX = ".svg"
 
 puts "creating 20 random users"
 
@@ -24,7 +26,8 @@ puts "creating 20 random users"
   User.create(
     nickname: name,
     email: "#{name}@test.org",
-    password: PASSWORD
+    password: PASSWORD,
+    avatar: AVATAR_BASE_PATH + (rand(6) + 1).to_s + AVATAR_SUFFIX
     )
 end
 
@@ -53,7 +56,8 @@ USERS.each do |user|
   User.create(
     nickname: user,
     email: "#{user}@test.org",
-    password: PASSWORD
+    password: PASSWORD,
+    avatar: AVATAR_BASE_PATH + (rand(6) + 1).to_s + AVATAR_SUFFIX
     )
 end
 

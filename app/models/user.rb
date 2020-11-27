@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :shortlists
   has_many :providers, through: :shortlists
   has_one_attached :photo
+  validates :avatar, presence: true
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

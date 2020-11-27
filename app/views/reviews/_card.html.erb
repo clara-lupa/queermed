@@ -7,7 +7,7 @@
     <div class="review-card-info-name">
       <div class="user-contact mt-2 p-0 user-position">
         <div class="image-container">
-          <%= image_tag "avatar/avatar_0#{rand(7)+1}.svg" %>
+          <%= image_tag review.user.avatar %>
         </div>
         <p class="name"> <%= review.user.nickname %> </p>
         <p>  <i class="fas fa-envelope"></i></p>
