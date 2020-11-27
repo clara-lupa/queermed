@@ -2,7 +2,7 @@
   <div class="container-index">
     <div class="cards-grid">
       <% @providers.each do |provider| %>
-        <%= render "shared/card", provider: provider, user: @user %>
+        <%= render "providers/card", provider: provider, user: @user %>
       <% end %>
     </div>
   </div>
