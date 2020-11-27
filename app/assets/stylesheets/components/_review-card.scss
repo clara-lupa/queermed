@@ -1,11 +1,11 @@
 .review-card {
   border: 1px solid black;
   margin-top: 8px;
-  padding: 8px;
   .review-card-content {
     font-family: "Roboto";
     font-weight: 300 !important;
     font-size: 18px;
+    padding: 8px;
   }
   .review-card-info {
     font-family: "Roboto";
@@ -16,9 +16,11 @@
 
 h3 {
   font-family: "Roboto";
-  font-weight: bold;
+  font-weight: light;
   font-size: 14px;
   margin-bottom: 0;
+  white-space: nowrap;
+  margin-right: 6px;
 }
 
 .review-card-info-name {
@@ -32,6 +34,10 @@ h3 {
    width: 100% !important;
 }
 
+.user-position {
+  position: relative;
+  top: 5px;
+}
 
 
 

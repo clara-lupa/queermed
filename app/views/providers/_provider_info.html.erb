@@ -1,12 +1,18 @@
     <div class="provider-info">
       <div class="shortlisted">
-       <i class="fas fa-star"></i>
+        <% if provider.shortlisted(current_user) %>
+          <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), method: :delete) %>
+        <% else %>
+          <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), method: :post) %>
+        <% end %>
       </div>
       <div class="name">
         <h1> <%= provider.title if provider.title %> <%= provider.first_name %> <%= provider.last_name%> </h1>
         <p> <%= provider.specialty %> </p>
       </div>
       <div class="provider-info-right">
-        <button class="button-black">Review</button>
+        <%= link_to @path_back do%>
+          <button class="button-black">Back to search</button>
+        <% end %>
       </div>
     </div>
