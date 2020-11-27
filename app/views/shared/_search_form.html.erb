@@ -1,12 +1,12 @@
-<%= form_tag providers_path, method: :get, class: "form-inline search-form" do %>
-  <div class="form-group">
+<%= form_tag providers_path, method: :get, class: "form-row search-form" do %>
+  <div class="col">
     <%= text_field_tag :query,
       params[:query],
       class: "form-control",
       placeholder: "Search for ..."
     %>
   </div>
-  <div class="form-group">
+  <div class="col">
     <%= text_field_tag :location,
       params[:location],
       class: "form-control address-input",
