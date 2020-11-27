@@ -19,6 +19,7 @@ class ProvidersController < ApplicationController
       }
     end
 
+
     if params[:location]
       geocoded_location = Geocoder.search(@location)
       @coordinates = geocoded_location.first.coordinates if geocoded_location.present?

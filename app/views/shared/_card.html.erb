@@ -1,12 +1,23 @@
+
 <div class="card-provider">
   <div class="card-provider-infos">
-    <div>
-      <% @providers.each do |provider| %>
-        <h2><%= provider.title provider.first_name provider.last_name %></h2>
-      <% end %>
-      <% if @coordinates %>
-        <p>Distance: <%= provider.distance(@coordinates).round(1) %>km</p>
-      <% end %>
-    </div>
+
+    <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
+    <h6><%= provider.specialty %></h6>
+    <% if @coordinates %>
+      <p>Distance: <%= provider.distance(@coordinates).round(1) %>km</p>
+    <% else %>
+      <p>Distance: 4.5km</p>
+    <% end %>
+    <p class="people-icon">6 <%= image_tag "people" %></p>
+    <% if provider.shortlisted(current_user) %>
+      <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), class: "star", remote: true, method: :delete) %>
+    <% else %>
+      <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), class: "star", remote: true, method: :post) %>
+    <% end %>
+
   </div>
 </div>
+
+
+
