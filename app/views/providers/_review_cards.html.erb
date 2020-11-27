@@ -1,6 +1,9 @@
 <div class="review-cards">
-  <h2> Reviews</h2>
-  <% provider.reviews.each do |review| %>
-    <%= render "reviews/card", review: review %>
+  <h2 class="mb-2"> Reviews</h2>
+
+  <%= render "reviews/review_form", provider: @provider, review: @review %>
+  <% @reviews.each do |review| %>
+    <%= render "reviews/card", review: review if review.content.present? %>
   <% end %>
 </div>
+

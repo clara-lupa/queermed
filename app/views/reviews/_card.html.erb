@@ -1,8 +1,18 @@
-<div class="container">
-  <div class="">
-    <%= review.user.nickname %>
+
+<div class="review-card">
+  <div class="review-card-content">
+    <%= review.content %>
+  </div>
+  <div class="review-card-info" >
+    <div class="review-card-info-name">
+      <div class="user-contact mt-2 p-0 user-position">
+        <div class="image-container">
+          <%= image_tag "avatar/avatar_0#{rand(7)+1}.svg" %>
+        </div>
+        <p class="name"> <%= review.user.nickname %> </p>
+        <p>  <i class="fas fa-envelope"></i></p>
+      </div>
+      <h3><%= time_ago_in_words(review.created_at) %> ago</h3>
     </div>
-    <div>
-      <%= review.content %>
-    </div>
+  </div>
 </div>

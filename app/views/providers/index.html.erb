@@ -2,10 +2,14 @@
   <div class="container-index">
     <%= render "shared/search_form", class:"search-form" %>
     <div class="cards-grid">
-      <% @providers.each do |provider| %>
-        <%= link_to provider_path(provider) do  %>
-          <%= render "card", provider: provider %>
+      <% unless @providers.empty? %>
+        <% @providers.each do |provider| %>
+          <%= link_to provider_path(provider) do  %>
+            <%= render "card", provider: provider %>
+          <% end %>
         <% end %>
+      <% else %>
+        <p> There are no results for your search yet. Sorry!</p>
       <% end %>
     </div>
   </div>

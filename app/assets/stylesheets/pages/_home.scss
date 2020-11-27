@@ -12,6 +12,7 @@
   border-width: 1px;
   background-color: white;
   width: 70vw;
+  box-sizing: unset;
 }
 
 @keyframes pulse {
@@ -57,8 +58,6 @@
 .container.home .form-inline.search-form .form-group {
   width: 30vw !important;
 }
-
-
 
 .intro {
   margin-top: 10vh;
