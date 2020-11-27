@@ -13,13 +13,14 @@ User.destroy_all
 Review.destroy_all
 
 PASSWORD = "123456"
-USERS = %w[igor dan magda clara]
-SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Gynecologist Dermatologist Physiotherapist Dentist]
-ADDRESS = ["Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Sonnenallee 101, 12045 Berlin", "Rudi-Dutschke-Str. 26, 10969 Berlin"]
+USERS = %w[igor dan magda clara ]
+SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Dermatologist Physiotherapist Dentist]
+ADDRESS = [ "Rudi-Dutschke-Str. 26, 10969 Berlin", "Sonnenallee 101, 12045 Berlin","Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin"]
 AVATAR_BASE_PATH = "avatar/avatar_0"
 AVATAR_SUFFIX = ".svg"
 
-puts "creating 20 random users"
+
+puts "Creating 20 random users"
 
 20.times do
   name = Faker::Name.first_name
@@ -30,6 +31,62 @@ puts "creating 20 random users"
     avatar: AVATAR_BASE_PATH + (rand(6) + 1).to_s + AVATAR_SUFFIX
     )
 end
+
+
+reviews = []
+reviews << [
+  "I come to Dr. Barris for my regular check-ups for many years and I was always treated well.",
+  "She really explained every step to me in detail, I liked that a lot.",
+  "Overall a good experience. I was really happy that they called me with the correct pronoun.
+  Not many other gynecologists do that from my experiences...",
+    "", "", ""
+]
+
+
+reviews << [
+  "I came here a couple of times to get prescriptions and check-ups. Dr. Carter seems to be very empathic, she took more than enough time for me and I felt quite comfortable with her.",
+  "I went to Dr. Carter to talk about my wish to have a baby with my girlfriend. She was really well informed, told me a lot about our different options and I never felt judged by her during the whole process.", "", "", ""
+]
+
+reviews << [
+  "I went to Dr. Collins when I got pregnant and kept going there during my whole pregnancy. I found him very competent and friendly."
+]
+
+reviews << [""]
+
+puts "creating 4 demo providers"
+
+first_names = ['Kim', 'Susan', 'Jo', 'Michael']
+last_names = ['Barris', 'Carter', 'Collins', 'Goldner']
+4.times do |i|
+  prov = Provider.create!(
+      first_name: first_names[i],
+      last_name: last_names[i],
+      title: "Dr.",
+      homepage: Faker::Internet.url,
+      phone_number: "030/#{rand(10000000..99999999)}",
+      specialty: "Gynecologist",
+      address: ADDRESS[i]
+    )
+
+  reviews[i].each do |content|
+    Review.create!(
+      provider: prov,
+      user: User.all.sample,
+      content: content
+      )
+  end
+end
+
+
+puts "creating demo user"
+
+User.create!(
+  nickname: "Jessi89",
+  email: "jessi.xyz@riseup.net",
+  password: PASSWORD,
+  avatar: "avatar/avatar_07.svg"
+  )
 
 puts "creating 10 providers with 0-5 recommendations"
 
@@ -62,14 +119,14 @@ USERS.each do |user|
 end
 
 
-puts "creating 30 reviews"
-30.times do
-  Review.create!(
-    content: Faker::Quote.famous_last_words,
-    user: User.all.sample,
-    provider: Provider.all.sample
-    )
-end
+# puts "creating 30 reviews"
+# 30.times do
+#   Review.create!(
+#     content: Faker::Quote.famous_last_words,
+#     user: User.all.sample,
+#     provider: Provider.all.sample
+#     )
+# end
 puts "finished"
 
 
