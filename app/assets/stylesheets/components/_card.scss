@@ -5,8 +5,14 @@
   color: black;
   background-color: white;
 }
+ .card-provider-infos a:first-child {
+  object-fit: cover;
+  text-decoration: none;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
 
-
+}
 
 
 .card-provider h2 {
@@ -31,7 +37,23 @@
   position: absolute;
   top: 8px;
   right: 8px;
+  transition: 0.3s;
+  z-index: 5;
 }
+
+.star:hover {
+  transform: scale(1.15);
+}
+
+#star {
+  transition: 0.3s;
+}
+
+#star:hover {
+  transform: scale(1.10);
+}
+
+
 .card-provider-infos {
   padding: 16px;
   display: flex;
@@ -39,6 +61,10 @@
   justify-content: space-between;
   align-items: flex-start;
   position: relative;
+}
+
+.card-provider-infos a:hover:first-child {
+  color:black;
 }
 
 
