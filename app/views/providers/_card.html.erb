@@ -4,7 +4,7 @@
     <h6><%= provider.specialty %></h6>
 
     <% if provider.shortlisted(current_user) %>
-      <%= link_to( image_tag("star_filled.svg"), shortlist_path(provider.shortlisted(current_user)), class: "star", remote: true, method: :delete) %>
+      <%= link_to( image_tag("star_filled.svg"), "", data: {favorite_id: provider.shortlisted(current_user).id}, class: "star", remote: true) %>
     <% else %>
       <%= link_to( image_tag("star_hollow.svg"), provider_shortlists_path(provider), class: "star", remote: true, method: :post) %>
     <% end %>
