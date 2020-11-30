@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_25_165316) do
+ActiveRecord::Schema.define(version: 2020_11_30_094213) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2020_11_25_165316) do
     t.bigint "user2_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "provider_id", null: false
+    t.index ["provider_id"], name: "index_conversations_on_provider_id"
     t.index ["user1_id"], name: "index_conversations_on_user1_id"
     t.index ["user2_id"], name: "index_conversations_on_user2_id"
   end
@@ -104,6 +106,7 @@ ActiveRecord::Schema.define(version: 2020_11_25_165316) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "conversations", "providers"
   add_foreign_key "conversations", "users", column: "user1_id"
   add_foreign_key "conversations", "users", column: "user2_id"
   add_foreign_key "messages", "conversations"

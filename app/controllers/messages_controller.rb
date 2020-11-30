@@ -1,13 +1,13 @@
 class MessagesController < ApplicationController
-  def new
-    @message = message.new
-  end
 
   def create
-    # if there is no conversation yet: generate new conversation @conversation (after init conv button)
-    # else take the given conversation (inside the messages index)
+    Message.create(
+      content: params[:message][:content],
+      user: current_user,
+      conversation: Conversation.find(params[:conversation_id])
+    )
+
+    redirect_back(fallback_location: conversations_path)
   end
 
-  def index
-  end
 end
