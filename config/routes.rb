@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   end
 
   get "shortlist", to: "pages#shortlist", as: :shortlists_index
-
+  get "/favorites/:id/provider/:provider_id", to: "shortlists#favorites"
   # how to nest the post request for new conversations? it transmit somehow information about the user who is on the button we have clicked on to the post request. idea: do an insane nesting: /providers/:id/reviews/:id/conversation/new
 
 end
