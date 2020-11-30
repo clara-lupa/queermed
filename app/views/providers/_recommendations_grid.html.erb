@@ -4,7 +4,7 @@
   <% if provider.has_recommendations? %>
     <div class="recommendations-grid">
       <% provider.reviews.each do |review| %>
-        <%= render "user_contact", user: review.user unless review.content.present? %>
+        <%= render "user_contact", user: review.user, in_card: false unless review.content.present? %>
       <% end %>
     </div>
   <% else %>
