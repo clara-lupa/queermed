@@ -14,8 +14,9 @@ class ConversationsController < ApplicationController
   end
 
   def index
-    @user1_conversations = current_user.user1_conversations
-    @user2_conversations = current_user.user2_conversations
+    @user = current_user
+    @user1_conversations = @user.user1_conversations
+    @user2_conversations = @user.user2_conversations
     @conversations = @user1_conversations + @user2_conversations
   end
 
