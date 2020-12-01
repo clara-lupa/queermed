@@ -1,9 +1,8 @@
-<h1>Conversations#index</h1>
 
-
-<ul>
+<div class="container conversations-container">
+  <h1>Your Conversations</h1>
   <% @conversations.each do |conversation| %>
-    <li> initiated by <%= conversation.user1.email %>, with <%= conversation.user2.email %>  </li>
-    <%= link_to "See messages", conversation %>
+    <%= render "conversation_card", conversation: conversation %>
   <% end %>
-</ul>
+
+</div>
