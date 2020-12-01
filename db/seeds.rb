@@ -8,6 +8,7 @@
 
 require 'faker'
 
+Conversation.destroy_all
 Provider.destroy_all
 User.destroy_all
 Review.destroy_all
