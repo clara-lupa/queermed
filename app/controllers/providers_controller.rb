@@ -1,8 +1,10 @@
 class ProvidersController < ApplicationController
 
   def index
+    console
     @user = current_user
     @location = params[:location]
+    session[:come_from_search] = true
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR title ILIKE :query OR specialty ILIKE :query"
       @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
@@ -29,6 +31,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
+    console
     @provider = Provider.find(params[:id])
     regex_remove_city = /,\s.*/
     regex_remove_street = /.*,\s/
@@ -41,6 +44,7 @@ class ProvidersController < ApplicationController
   end
 
   def new
+    session[:come_from_search] = false
     @provider = Provider.new
     @providers = Provider.all
     @specialty_array = []

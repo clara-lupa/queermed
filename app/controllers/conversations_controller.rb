@@ -24,5 +24,6 @@ class ConversationsController < ApplicationController
     # think about authentification here, only visible to users involved in that conversation
     @conversation = Conversation.find(params[:id])
     @message = Message.new
+    session[:come_from_search] = false
   end
 end
