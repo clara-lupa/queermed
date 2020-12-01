@@ -22,7 +22,8 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+          <%= image_tag "message.svg", id: "envelope-icon", style: "visibility:hidden" %>
+          <div class="dropdown-menu dropdown-menu-right user" aria-labelledby="navbarDropdown" data-user-id="<%= current_user.id %>">
             <%= link_to "Inbox", conversations_path, class: "dropdown-item" %>
             <%= link_to "Shortlist", shortlists_index_path, class: "dropdown-item" %>
             <%= link_to "Profile", "#", class: "dropdown-item" %>
