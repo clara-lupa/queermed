@@ -33,6 +33,7 @@ import { initAutocomplete } from '../plugins/init_autocomplete'
 import { favoriteAjax } from '../plugins/favorite_ajax'
 import { initConversationCable} from '../channels/conversation_channel'
 import { initNotificationsCable} from '../channels/notifications_channel'
+import { resetEnvelope } from '../packs/resetEnvelope'
 
 
 
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   favoriteAjax();
   initConversationCable();
   initNotificationsCable();
+  resetEnvelope();
   // Call your functions here, e.g:
   // initSelect2();
 });
