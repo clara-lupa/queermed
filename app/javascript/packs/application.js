@@ -32,6 +32,7 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { favoriteAjax } from '../plugins/favorite_ajax'
 import { initConversationCable} from '../channels/conversation_channel'
+import { initNotificationsCable} from '../channels/notifications_channel'
 
 
 
@@ -40,6 +41,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   favoriteAjax();
   initConversationCable();
+  initNotificationsCable();
   // Call your functions here, e.g:
   // initSelect2();
 });

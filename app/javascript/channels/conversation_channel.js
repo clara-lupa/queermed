@@ -9,11 +9,7 @@ const initConversationCable = () => {
 
     consumer.subscriptions.create({ channel: "ConversationChannel", id: id }, {
       received(data) {
-        // if messagesContainer do the following
         messagesContainer.insertAdjacentHTML('afterbegin', data);
-        console.log("received data")
-        // if envelop icon do:
-        //  if icon hidden set it visible
       }
     });
 
