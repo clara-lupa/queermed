@@ -10,7 +10,7 @@ class PagesController < ApplicationController
     #   shortlist.provider
     # }
     @providers = @user.providers
-
+    @shortlists = @user.shortlists
     @markers = @providers.geocoded.map do |provider|
       {
         lat: provider.latitude,
