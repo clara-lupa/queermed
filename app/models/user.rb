@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :user1_conversations, class_name: "Conversation", foreign_key: "user1_id", dependent: :destroy
   has_many :user2_conversations, class_name: "Conversation", foreign_key: "user2_id", dependent: :destroy
   has_many :shortlists
+  has_many :reviews
   has_many :providers, through: :shortlists
   # call .user2s on a User instance to get all users the instance has contacted
   has_many :user2s, through: :user1_conversations, class_name: "User", source: "user2"
@@ -29,5 +30,9 @@ class User < ApplicationRecord
         conversation.user1 == other_user && conversation.provider == provider
       end
     end
+  end
+
+  def recommended?(provider)
+    reviews.find { |review| review.provider == provider }
   end
 end
