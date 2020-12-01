@@ -1,3 +1,21 @@
 form {
   margin-bottom: 1rem;
 }
+
+.participants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .user-details {
+    margin: 0;
+    padding: 0.5rem;
+    width: unset;
+  }
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
