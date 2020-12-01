@@ -1,7 +1,5 @@
 class ProvidersController < ApplicationController
-
   def index
-    console
     @user = current_user
     @location = params[:location]
     session[:come_from_search] = true
@@ -21,17 +19,14 @@ class ProvidersController < ApplicationController
       }
     end
 
-
     if params[:location]
       geocoded_location = Geocoder.search(@location)
       @coordinates = geocoded_location.first.coordinates if geocoded_location.present?
       @providers = @providers.sort_by { |provider| provider.distance(@coordinates) } if @coordinates
     end
-
   end
 
   def show
-    console
     @provider = Provider.find(params[:id])
     regex_remove_city = /,\s.*/
     regex_remove_street = /.*,\s/
