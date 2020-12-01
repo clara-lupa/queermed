@@ -1,0 +1,45 @@
+.message-row {
+  display: flex;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.message-row.own {
+  justify-content: left;
+}
+
+.message-row.other {
+  justify-content: right;
+}
+
+.message-card {
+  border: 1px solid black;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  .message-content {
+    flex-grow: 1;
+    margin: 1rem;
+  }
+  padding: 1rem;
+  .user-details {
+    margin: 0;
+  }
+  p {
+    word-break: break-all;
+  }
+}
+
+.message-card.other {
+  justify-content: right;
+  box-shadow: 0px 0px 20px 2px $pink-transp;
+}
+
+.message-card.own {
+  box-shadow: 0px 0px 20px 2px $orange-transp;
+}
+
+p.time {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}

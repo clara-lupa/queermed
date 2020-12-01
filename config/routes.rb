@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users # , path: 'accounts'
   root to: 'pages#home'
 
   resources :providers, only: [:index, :show, :new, :create ] do
@@ -10,12 +10,18 @@ Rails.application.routes.draw do
 
   resources :shortlists, only: :destroy
 
-  resources :conversations, only: [:create, :index, :show] do
+# check with TA if that is a reasonable way to do it
+  resources :users, only: [] do
+    resources :conversations, only: :create
+  end
+
+  resources :conversations, only: [:show] do
     resources :messages, only: [:create, :index]
   end
 
   get "shortlist", to: "pages#shortlist", as: :shortlists_index
+
   get "/favorites/:id/provider/:provider_id", to: "shortlists#favorites"
-  # how to nest the post request for new conversations? it transmit somehow information about the user who is on the button we have clicked on to the post request. idea: do an insane nesting: /providers/:id/reviews/:id/conversation/new
+  get "inbox", to: "conversations#index", as: :conversations
 
 end

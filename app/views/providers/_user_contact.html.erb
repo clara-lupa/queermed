@@ -1,7 +1,20 @@
-<div class="user-contact">
+<% if in_card %>
+  <div class= "user-contact mt-2 p-0 user-position">
+<% else %>
+  <div class= "user-contact">
+<% end %>
+
   <div class="image-container">
     <%= image_tag user.avatar %>
   </div>
   <p class="name"> <%= user.nickname %> </p>
-  <p>  <i class="fas fa-envelope"></i></p>
+  <% if current_user.conversation?(user, @provider)%>
+    <%= link_to current_user.conversation?(user, @provider) do %>
+      <p>  <i class="fas fa-envelope"></i></p>
+    <% end %>
+  <% else %>
+    <%= link_to user_conversations_path(user, provider_id: @provider), method: :post do %>
+      <p>  <i class="fas fa-envelope"></i></p>
+    <% end %>
+  <% end %>
 </div>

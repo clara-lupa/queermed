@@ -1,5 +1,4 @@
-
-simple_form_for [@conversation, @message]
-
-<!-- code form for a new message
- -->
+<%= simple_form_for [@conversation, @message] do |f| %>
+  <%= f.input :content, label: false, placeholder: "Type your message here..." %>
+  <%= f.submit "Send", class: "button-black" %>
+<% end %>

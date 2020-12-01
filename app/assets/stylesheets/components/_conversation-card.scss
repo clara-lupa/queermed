@@ -1,0 +1,34 @@
+.conversation-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  .conversation-content {
+    border: black solid 1px;
+    flex-grow: 1;
+    min-height: 4rem;
+    padding: 0.5rem;
+  }
+  .conversation-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  a {
+    object-fit: cover;
+    text-decoration: none;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.user-details {
+  width: 5rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    height: 2.5rem;
+  }
+}

@@ -1,0 +1,15 @@
+<div class="conversation-container">
+  <%= render "user_details", user: conversation.other_user(@user), displayed_name: conversation.other_user(@user).nickname %>
+
+  <%= link_to conversation do%>
+    <div class="conversation-content">
+      <div class="conversation-info">
+        <p> <strong> <%= conversation.provider.title %> <%= conversation.provider.first_name %> <%= conversation.provider.last_name %> </strong> -- <%= conversation.provider.specialty %>  </p>
+        <p> <%= time_ago_in_words(conversation.updated_at) %> </p>
+      </div>
+      <% if conversation.messages.present? %>
+        <div class="message-preview"> <%= conversation.messages.last.content %> </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
