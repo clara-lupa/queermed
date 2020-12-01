@@ -8,44 +8,72 @@ h1 {
   }
 
 .columns-container {
-  display: flex;
+  margin-top: 100px;
 }
 
-.column-left {
-  width: 70%;
-  padding-right: 1rem;
-  padding-top: 1rem;
-}
-
-.column-right {
-  width: 30%;
-  padding-left: 1rem;
-  padding-top: 1rem;
+.show-right {
+  float: right;
   position: sticky;
-  top: 0;
+  top: 170px;
   height: 100%;
-
+  width: 25%;
+  margin-left: 5%;
 }
+
+.show-left {
+  display: inline-block;
+  width: 65%;
+  margin-right: 5%;
+}
+
 
 .provider-info {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 5% 65% 30%;
   margin-bottom: 1rem;
-  .shortlisted {
-    font-size: 24px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    display: flex;
-  }
-  .name {
-    flex-grow: 1;
-  }
+  grid-template-areas: "star name button"
+                       ". name .";
 }
+
+.shortlisted {
+  font-size: 24px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: flex;
+  grid-area: star;
+}
+
+.name {
+  flex-grow: 1;
+  grid-area: name;
+}
+
+.provider-info-right {
+  grid-area: button;
+  display: grid;
+}
+
+.provider-info-right a{
+  grid-area: button;
+  text-align: right;
+}
+
+.shortlisted .star {
+    position: relative;
+    top: 0px;
+    right: 12px;
+    transition: 0.3s;
+    z-index: 5;
+
+}
+
+
 .review-cards {
   border: black 1px solid;
   padding: 1rem;
   position: relative;
   box-shadow: 0px 0px 20px 2px $pink-transp;
+
 }
 
 a {
