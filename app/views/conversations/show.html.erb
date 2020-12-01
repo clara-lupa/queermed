@@ -2,10 +2,11 @@
 
   <h1>Your conversation about <%= @conversation.provider.title %>  <%= @conversation.provider.first_name %>  <%= @conversation.provider.last_name %></h1>
   <%= render "new_message_form" %>
-
-  <% @conversation.messages.reverse.each do |message| %>
-    <%= render "message_card", message: message, other: message.user != current_user %>
-  <% end %>
+  <div id="messages" data-conversation-id= "<%= @conversation.id %>">
+    <% @conversation.messages.reverse.each do |message| %>
+      <%= render "message_card", message: message, other: message.user != current_user %>
+    <% end %>
+  </div>
     <%= link_to conversations_path do %>
     <button class="button-black"> Back to inbox </button>
   <% end %>
