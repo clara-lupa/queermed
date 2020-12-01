@@ -40,4 +40,7 @@ document.addEventListener('turbolinks:load', () => {
   favoriteAjax();
   // Call your functions here, e.g:
   // initSelect2();
+  $('#exampleModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 });
