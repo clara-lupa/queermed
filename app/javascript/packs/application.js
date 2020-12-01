@@ -38,4 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   initAutocomplete();
   // Call your functions here, e.g:
   // initSelect2();
+  $('#exampleModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 });
