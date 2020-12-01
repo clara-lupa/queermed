@@ -33,6 +33,9 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElement.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.on('load', () => {
+      map.resize();
+    });
   }
 
   const mapElementShow = document.getElementById('map-show');
@@ -42,7 +45,12 @@ const initMapbox = () => {
     const markers = JSON.parse(mapElementShow.dataset.markers);
     addMarkersToMap(map, markers);
     fitMapToMarkers(map, markers);
+    map.on('load', () => {
+      map.resize();
+    });
   }
 };
+
+
 
 export { initMapbox };
