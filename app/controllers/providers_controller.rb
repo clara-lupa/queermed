@@ -1,8 +1,8 @@
 class ProvidersController < ApplicationController
-
   def index
     @user = current_user
     @location = params[:location]
+    session[:come_from_search] = true
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR title ILIKE :query OR specialty ILIKE :query"
       @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
@@ -19,13 +19,11 @@ class ProvidersController < ApplicationController
       }
     end
 
-
     if params[:location]
       geocoded_location = Geocoder.search(@location)
       @coordinates = geocoded_location.first.coordinates if geocoded_location.present?
       @providers = @providers.sort_by { |provider| provider.distance(@coordinates) } if @coordinates
     end
-
   end
 
   def show
@@ -41,6 +39,7 @@ class ProvidersController < ApplicationController
   end
 
   def new
+    session[:come_from_search] = false
     @provider = Provider.new
     @providers = Provider.all
     @specialty_array = []

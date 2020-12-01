@@ -1,3 +1,8 @@
+
+<!-- has to be moved to a reasonable place once layout is done -->
+<% if session[:come_from_search] %>
+  <%= link_to "Back to search", session[:last_search], class: "button-nav" %>
+<% end %>
 <div class="container columns-container">
   <div class="show-left">
     <%= render "provider_info", provider: @provider %>
