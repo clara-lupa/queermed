@@ -46,4 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   resetEnvelope();
   // Call your functions here, e.g:
   // initSelect2();
+  $('#exampleModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 });
