@@ -1,12 +1,10 @@
-
-
 <div class="container columns-container">
-  <div class="column-left">
+  <div class="show-left">
     <%= render "provider_info", provider: @provider %>
     <%= render "review_cards", provider: @provider %>
   </div>
 
-  <div class="column-right">
+  <div class="show-right">
     <%= render "map_show", provider: @provider %>
     <%= render "contact_details", provider: @provider %>
     <%= render "recommendations_grid", provider: @provider %>
