@@ -31,6 +31,9 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete'
 import { favoriteAjax } from '../plugins/favorite_ajax'
+import { initConversationCable} from '../channels/conversation_channel'
+import { initNotificationsCable} from '../channels/notifications_channel'
+import { resetEnvelope } from '../packs/resetEnvelope'
 
 
 
@@ -38,6 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initAutocomplete();
   favoriteAjax();
+  initConversationCable();
+  initNotificationsCable();
+  resetEnvelope();
   // Call your functions here, e.g:
   // initSelect2();
   $('#exampleModal').on('shown.bs.modal', function () {
