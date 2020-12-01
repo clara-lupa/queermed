@@ -4,18 +4,24 @@ form {
 
 .participants {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
+  flex-grow: 1;
   .user-details {
     margin: 0;
     padding: 0.5rem;
+    padding-top: 0;
     width: unset;
   }
 }
 
 .navigation {
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
   margin-bottom: 1rem;
+  .button-nav {
+    width: 11.3rem;
+    margin-right: 0.3rem;
+  }
 }
