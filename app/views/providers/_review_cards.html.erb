@@ -1,7 +1,10 @@
 <div class="review-cards">
-  <h2 class="mb-2"> Reviews</h2>
+  <% if @provider.reviews.empty? %>
+    <h2 class="mb-2">There are no reviews yet.</h2>
+  <% else %>
+    <h2 class="mb-2">Reviews</h2>
+  <% end %>
 
-  <%= render "reviews/review_form", provider: @provider, review: @review %>
   <% @reviews.each do |review| %>
     <%= render "reviews/card", review: review if review.content.present? %>
   <% end %>
