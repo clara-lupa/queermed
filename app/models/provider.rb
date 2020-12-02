@@ -17,7 +17,6 @@ class Provider < ApplicationRecord
     end
   end
 
-
   def distance(coordinates)
     # returns distance in km, argument should be an address string
     distance_to(coordinates).round(3) if coordinates
@@ -25,6 +24,9 @@ class Provider < ApplicationRecord
 
   def has_recommendations?
     reviews.any? { |review| !review.content.present? }
+  end
 
+  def has_reviews?
+    reviews.any? { |review| review.content.present? }
   end
 end
