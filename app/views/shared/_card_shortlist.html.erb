@@ -1,14 +1,13 @@
-<%= link_to provider_path(provider), class: "random" do  %>
 <div class="card-provider">
   <div class="card-provider-infos">
     <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
     <h6><%= provider.specialty %></h6>
     <% if provider.shortlisted(current_user) %>
-        <template><%= link_to data: {provider_id: provider.id, favorite_id: provider.shortlisted(current_user).id}, class: "star full", remote: true do %>
+        <%= link_to "", data: {provider_id: provider.id, favorite_id: provider.shortlisted(current_user).id}, class: "star full", remote: true do %>
           <i class="fas fa-star" ></i>
-        <% end %></template>
+        <% end %>
     <% else %>
-        <%= link_to data: {provider_id: provider.id, favorite_id: 0}, class: "star empty", remote: true do %>
+        <%= link_to "", data: {provider_id: provider.id, favorite_id: 0}, class: "star empty", remote: true do %>
           <i class="far fa-star"></i>
         <% end %>
     <% end %>
@@ -18,4 +17,4 @@
     <p class="people-icon"> <%= provider.reviews.count %> <%= image_tag "people.svg" %></p>
   </div>
 </div>
-<% end %>
+

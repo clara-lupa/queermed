@@ -4,13 +4,7 @@
     <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
     <h6><%= provider.specialty %></h6>
     <% if provider.shortlisted(current_user) %>
-        <template><%= link_to data: {provider_id: provider.id, favorite_id: provider.shortlisted(current_user).id}, class: "star full", remote: true do %>
-          <i class="fas fa-star" ></i>
-        <% end %></template>
-    <% else %>
-        <%= link_to data: {provider_id: provider.id, favorite_id: 0}, class: "star empty", remote: true do %>
-          <i class="far fa-star"></i>
-        <% end %>
+        <%= image_tag "star_filled.svg", class: "star" %>
     <% end %>
     <% if @coordinates %>
       <p><%= provider.distance(@coordinates).round(1) %>km</p>

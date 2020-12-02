@@ -1,10 +1,11 @@
 <div class="container-content">
   <div class="container-index">
+    <h1>Your Shortlist</h1>
     <div class="cards-grid">
       <% @shortlists.each do |shortlist| %>
         <div class="card-shortlist" id=<%= shortlist.id %>>
           <%= link_to provider_path(shortlist.provider) do  %>
-              <%= render "providers/card", provider: shortlist.provider, user: @user %>
+              <%= render "shared/card_shortlist", provider: shortlist.provider, user: @user %>
           <% end %>
         </div>
       <% end %>
