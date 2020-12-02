@@ -6,4 +6,11 @@
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
   padding: 6px 17px 6px 17px;
+   -webkit-box-shadow: 0 4px 6px -6px black;
+     -moz-box-shadow: 0 4px 6px -6px black;
+          box-shadow: 0 4px 6px -6px black;
+}
+
+a.button-nav:hover{
+  text-decoration: none;
 }
