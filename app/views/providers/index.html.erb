@@ -1,18 +1,18 @@
 <div class="container-content">
   <div class="container-index">
-    <%= render "shared/search_form", class:"search-form" %>
-    <div class="cards-grid">
-      <% unless @providers.empty? %>
-        <% @providers.each do |provider| %>
-          <%= link_to provider_path(provider) do  %>
-            <%= render "card", provider: provider %>
-          <% end %>
+   <h1>Search Results</h1>
+  <%#= render "shared/search_form", class:"search-form" %>
+  <div class="cards-grid-index">
+    <% unless @providers.empty? %>
+      <% @providers.each do |provider| %>
+        <div><%= render "shared/card_index", provider: provider %></div>
         <% end %>
-      <% else %>
-        <p> There are no results for your search yet. Sorry!</p>
-      <% end %>
-    </div>
+    <% else %>
+      <p> There are no results for your search yet. Sorry!</p>
+    <% end %>
+  </div>
   </div>
   <%= render "shared/map" %>
 </div>
+
 
