@@ -1,0 +1,26 @@
+.mapboxgl-popup-content {
+  border: black solid 1px;
+  border-radius: 0 !important;
+  h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  text-decoration: none;
+  }
+
+  p {
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  text-decoration: none;
+  }
+  button:focus {
+    border: none;
+    outline: none;
+  }
+}
+
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+  border-top-color: black !important;
+}
