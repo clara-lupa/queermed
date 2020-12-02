@@ -43,7 +43,7 @@ class ProvidersController < ApplicationController
     @provider = Provider.new
     @providers = Provider.all
     @specialty_array = []
-    @providers.each { |provider|@specialty_array << provider.specialty }
+    @providers.each { |provider| @specialty_array << provider.specialty }
     @specialty_array = @specialty_array.uniq
   end
 
@@ -56,8 +56,8 @@ class ProvidersController < ApplicationController
     end
   end
 
-
   private
+
   def provider_params
     params.require(:provider).permit(:title, :first_name, :last_name, :specialty, :homepage, :email, :phone_number, :address)
   end

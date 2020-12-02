@@ -1,5 +1,5 @@
 <div class="review-cards">
-  <% if @provider.reviews.empty? %>
+  <% unless @provider.has_reviews? %>
     <h2 class="mb-2">There are no reviews yet.</h2>
   <% else %>
     <h2 class="mb-2">Reviews</h2>
