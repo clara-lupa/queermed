@@ -8,15 +8,17 @@
 .container-index {
   display: inline-block;
   position: relative;
-  width: 30vw;
+  width: 45%;
+  margin-top: 4vh;
+  margin-right: 5%;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  width: 30vw;
+  width: 90%;
   grid-gap: 32px;
-  margin-top: 5vh;
+  margin-top: 2vh;
 }
 
 .search-form {
@@ -28,48 +30,48 @@
   margin-right: 5px;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+1){
+.cards-grid div:hover:nth-child(7n+1){
 
   box-shadow: 0px 0px 200px 4px $pink;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+2){
+.cards-grid div:hover:nth-child(7n+2){
   box-shadow: 0px 0px 200px 4px $baby-blue;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+3){
+.cards-grid div:hover:nth-child(7n+3){
   box-shadow: 0px 0px 200px 4px $brown;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+4){
+.cards-grid div:hover:nth-child(7n+4){
   box-shadow: 0px 0px 200px 4px $red;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+5){
+.cards-grid div:hover:nth-child(7n+5){
   box-shadow: 0px 0px 200px 4px $orange;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+6){
+.cards-grid div:hover:nth-child(7n+6){
   box-shadow: 0px 0px 200px 4px $yellow;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+7){
+.cards-grid div:hover:nth-child(7n+7){
   box-shadow: 0px 0px 200px 4px $green;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+8){
+.cards-grid div:hover:nth-child(7n+8){
   box-shadow: 0px 0px 200px 4px $blue;
   z-index: 300;
 }
 
-.cards-grid .card-provider:hover:nth-child(7n+9){
+.cards-grid div:hover:nth-child(7n+9){
   box-shadow: 0px 0px 200px 4px $purple;
   z-index: 300;
 }
@@ -77,48 +79,48 @@
 
 .cards-grid .card-shortlist:hover:nth-child(7n+1){
 
-  box-shadow: 0px 0px 200px 4px $pink;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $pink;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+2){
-  box-shadow: 0px 0px 200px 4px $baby-blue;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $baby-blue;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+3){
-  box-shadow: 0px 0px 200px 4px $brown;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $brown;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+4){
-  box-shadow: 0px 0px 200px 4px $red;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $red;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+5){
-  box-shadow: 0px 0px 200px 4px $orange;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $orange;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+6){
-  box-shadow: 0px 0px 200px 4px $yellow;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $yellow;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+7){
-  box-shadow: 0px 0px 200px 4px $green;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $green;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+8){
-  box-shadow: 0px 0px 200px 4px $blue;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $blue;
+ z-index: 300;
 }
 
 .cards-grid .card-shortlist:hover:nth-child(7n+9){
-  box-shadow: 0px 0px 200px 4px $purple;
-  z-index: 300;
+ box-shadow: 0px 0px 200px 4px $purple;
+ z-index: 300;
 }
 
 // Smallest device

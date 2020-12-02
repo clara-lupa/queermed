@@ -1,9 +1,13 @@
-#map {
+.sticky-container {
   height: 70vh;
   width: 40vw;
-  margin: 8vh 0px 2vh 5vw;
+  margin: 10vh 0 5vw;
   position: sticky;
   top: 100px;
+}
+
+#map {
+  height: 100%;
 }
 
 #map > img {
@@ -21,4 +25,12 @@
   font-family: 'Roboto', sans-serif;
 }
 
-
+.search-form {
+  position: relative;
+  background: white;
+  padding: 20px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  margin: 0;
+}

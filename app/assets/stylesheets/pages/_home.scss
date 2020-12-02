@@ -1,7 +1,9 @@
 .content {
-
+  padding-top: 0.5rem;
 }
-
+.show-back {
+  margin: 0.5rem;
+}
 .container.home {
   display: grid;
   grid-template-columns: 1fr;

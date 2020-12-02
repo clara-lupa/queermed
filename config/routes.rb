@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users # , path: 'accounts'
+  devise_for :users
   root to: 'pages#home'
 
   resources :providers, only: [:index, :show, :new, :create ] do
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
 
   resources :shortlists, only: :destroy
 
-# check with TA if that is a reasonable way to do it
   resources :users, only: [] do
     resources :conversations, only: :create
   end
@@ -23,5 +22,7 @@ Rails.application.routes.draw do
 
   get "/favorites/:id/provider/:provider_id", to: "shortlists#favorites"
   get "inbox", to: "conversations#index", as: :conversations
+
+  mount ActionCable.server => '/cable'
 
 end

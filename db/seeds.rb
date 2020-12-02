@@ -9,14 +9,17 @@
 require 'faker'
 
 Conversation.destroy_all
+Message.destroy_all
+Shortlist.destroy_all
+Review.destroy_all
 Provider.destroy_all
 User.destroy_all
-Review.destroy_all
+
 
 PASSWORD = "123456"
 USERS = %w[igor dan magda clara ]
 SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Dermatologist Physiotherapist Dentist]
-ADDRESS = [ "Rudi-Dutschke-Str. 26, 10969 Berlin", "Sonnenallee 101, 12045 Berlin","Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin"]
+ADDRESS = [ "Rudi-Dutschke-Str. 26, 10969 Berlin", "Sonnenallee 101, 12045 Berlin","Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Turmstr. 28, Berlin", "Goethestr. 33, Berlin", "Neue Hochstr. 14, Berlin", "Potsdamer Str. 55, Berlin", "Tempelhofer Damm 51, Berlin", "Sebastianstr. 14, Berlin", "Wildenbruchstr. 10, Berlin", "Selchower Str. 12, Berlin"]
 AVATAR_BASE_PATH = "avatar/avatar_0"
 AVATAR_SUFFIX = ".svg"
 
@@ -69,11 +72,12 @@ last_names = ['Barris', 'Carter', 'Collins', 'Goldner']
       specialty: "Gynecologist",
       address: ADDRESS[i]
     )
+  reviewers = User.all.sample(reviews[i].length)
 
-  reviews[i].each do |content|
+  reviews[i].each_with_index do |content, index|
     Review.create!(
       provider: prov,
-      user: User.all.sample,
+      user: reviewers[index],
       content: content
       )
   end
