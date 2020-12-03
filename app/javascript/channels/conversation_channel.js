@@ -5,11 +5,17 @@ const initConversationCable = () => {
   const messagesContainer = document.getElementById('messages');
   if (messagesContainer) {
     const id = messagesContainer.dataset.conversationId;
+    const currentUserId = messagesContainer.dataset.userId
 
 
     consumer.subscriptions.create({ channel: "ConversationChannel", id: id }, {
       received(data) {
-        messagesContainer.insertAdjacentHTML('afterbegin', data);
+        if (data.senderId == currentUserId) {
+          messagesContainer.insertAdjacentHTML('afterbegin', data.senderPartial);
+        }
+        else {
+          messagesContainer.insertAdjacentHTML('afterbegin', data.nonSenderPartial);
+        }
       }
     });
 
