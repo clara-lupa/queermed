@@ -1,20 +1,24 @@
+<div class="navigation">
+  <%= link_to conversations_path do %>
+    <button class="button-nav"> Go to inbox </button>
+  <% end %>
+  <%= link_to provider_path(@conversation.provider) do %>
+    <button class="button-nav"> Provider details </button>
+  <% end %>
+</div>
 <div class="container conversations-container">
-
-  <div class="navigation">
-    <%= link_to conversations_path do %>
-      <button class="button-nav"> Go to inbox </button>
-    <% end %>
-    <%= link_to provider_path(@conversation.provider) do %>
-      <button class="button-nav"> Provider details </button>
-    <% end %>
-    <div class="participants">
-      <%= render "user_details", user: @conversation.other_user(current_user), displayed_name: nil%>
-      &
-      <%= render "user_details", user: current_user, displayed_name: "You" %>
+  <div class="conversations-header">
+    <div class="conversations-text">
+      <h1>Your conversation with <%= @conversation.other_user(current_user).nickname%> about <%= @conversation.provider.title %>  <%= @conversation.provider.first_name %>  <%= @conversation.provider.last_name %></h1>
+    </div>
+    <div class="participants-container">
+      <div class="participants">
+        <%= render "user_details", user: @conversation.other_user(current_user), displayed_name: nil%>
+        &
+        <%= render "user_details", user: current_user, displayed_name: "You" %>
+      </div>
     </div>
   </div>
-
-  <h1>Your conversation with <%= @conversation.other_user(current_user).nickname%> about <%= @conversation.provider.title %>  <%= @conversation.provider.first_name %>  <%= @conversation.provider.last_name %></h1>
 
   <%= render "new_message_form" %>
   <div id="messages" data-conversation-id= "<%= @conversation.id %>" data-user-id = <%= current_user.id %>>
