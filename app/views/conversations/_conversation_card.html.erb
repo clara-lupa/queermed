@@ -8,7 +8,7 @@
         <p> <%= time_ago_in_words(conversation.updated_at) %> </p>
       </div>
       <% if conversation.messages.present? %>
-        <div class="message-preview"> <%= conversation.messages.last.content %> </div>
+        <div class="message-preview"> <%= conversation.messages.last.content %> ago </div>
       <% end %>
     </div>
   <% end %>
