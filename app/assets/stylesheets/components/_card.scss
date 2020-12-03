@@ -41,6 +41,7 @@
   bottom: 8px;
 }
 
+
 .star {
  position: absolute;
  top: 8px;
@@ -53,12 +54,25 @@
   transform: scale(1.15);
 }
 
+.star-index {
+ position: absolute;
+ top: 8px;
+ right: 8px;
+ transition: 0.3s;
+ z-index: 5;
+}
+
+
 #star {
-  transition: 0.3s;
+ position: absolute;
+ top: 8px;
+ right: 8px;
+ transition: 0.3s;
+ z-index: 5;
 }
 
 #star:hover {
-  transform: scale(1.10);
+  transform: scale(1.15);
 }
 
 

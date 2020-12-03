@@ -4,7 +4,7 @@
     <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
     <h6><%= provider.specialty %></h6>
     <% if provider.shortlisted(current_user) %>
-        <%= image_tag "star_filled.svg", class: "star" %>
+        <%= image_tag "star_filled.svg", class: "star-index" %>
     <% end %>
     <% if @coordinates %>
       <p><%= provider.distance(@coordinates).round(1) %>km</p>
