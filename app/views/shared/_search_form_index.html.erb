@@ -1,1 +1,19 @@
 <!-- new search form for underneath map will be here -->
+<%= form_tag providers_path, method: :get, class: "form-row search-form" do %>
+  <div class="col">
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search for ..."
+    %>
+  </div>
+  <div class="col">
+    <%= text_field_tag :location,
+      params[:location],
+      class: "form-control address-input",
+      placeholder: "Where?",
+      required: true
+    %>
+  </div>
+  <%= button_tag "Search", type: "submit", class: "button-black" %>
+<% end %>
