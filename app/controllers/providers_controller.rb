@@ -4,11 +4,11 @@ class ProvidersController < ApplicationController
   def index
     @user = current_user
     @location = params[:location]
+    session[:last_search] = request.url
     session[:come_from_search] = true
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR title ILIKE :query OR specialty ILIKE :query"
       @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
-      session[:last_search] = request.url
     else
       @providers = Provider.all
     end
