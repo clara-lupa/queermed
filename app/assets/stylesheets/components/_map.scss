@@ -1,9 +1,17 @@
 .sticky-container {
   height: 70vh;
   width: 40vw;
-  margin: 79.8px 0 5vh;
+  margin: 68px 0 5vw;
   position: sticky;
-  top: 160px;
+  top: 134px;
+}
+
+.sticky-container-shortlist {
+  height: 70vh;
+  width: 40vw;
+  margin: 76px 0 5vw;
+  position: sticky;
+  top: 134px;
 }
 
 #map {
