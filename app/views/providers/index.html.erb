@@ -1,16 +1,16 @@
 <div class="container-content">
   <div class="container-index">
-   <h1>Search Results</h1>
-  <%#= render "shared/search_form", class:"search-form" %>
-  <div class="cards-grid-index">
+    <h1>Search Results</h1>
     <% unless @providers.empty? %>
-      <% @providers.each do |provider| %>
-        <div><%= render "shared/card_index", provider: provider %></div>
+      <div class="cards-grid-index">
+        <% @providers.each do |provider| %>
+          <div><%= render "shared/card_index", provider: provider %></div>
         <% end %>
+      </div>
     <% else %>
       <p> There are no results for your search yet. Sorry!</p>
+      <p> Try a new <%= link_to "search", :root %> or <%= link_to "add", :new_provider %> a provider yourself. </p>
     <% end %>
-  </div>
   </div>
   <%= render "shared/map_index" %>
 </div>
