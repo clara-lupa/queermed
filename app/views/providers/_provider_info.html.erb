@@ -15,8 +15,15 @@
         <p> <%= provider.specialty %> </p>
       </div>
       <div class="provider-info-right">
-        <% unless current_user.recommended?(provider) %>
-          <button class="button-black" data-toggle="modal" data-target="#exampleModal">Recommendation</button>
+
+        <% if !session[:user_id].nil?  %>
+          <% unless current_user.recommended?(provider) %>
+            <button class="button-black" data-toggle="modal" data-target="#exampleModal">Recommendation</button>
+          <% end %>
+        <% else %>
+          <div></div>
+
+       
         <% end %>
       </div>
     </div>

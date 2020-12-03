@@ -22,10 +22,10 @@
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <%= image_tag "message.svg", id: "envelope-icon", style: "visibility:hidden" %>
+          <%= image_tag "message_active.svg", id: "envelope-icon", style: "visibility:hidden" %>
           <div class="dropdown-menu dropdown-menu-right user" aria-labelledby="navbarDropdown" data-user-id="<%= current_user.id %>">
             <%= link_to "Inbox", conversations_path, class: "dropdown-item" %>
-            <%= link_to "Shortlist", shortlists_index_path, class: "dropdown-item" %>
+            <%= link_to "Favorites", shortlists_index_path, class: "dropdown-item" %>
             <%= link_to "Profile", "#", class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
