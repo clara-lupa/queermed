@@ -42,11 +42,11 @@
 }
 
 .star {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  transition: 0.3s;
-  z-index: 5;
+ position: absolute;
+ top: 8px;
+ right: 8px;
+ transition: 0.3s;
+ z-index: 5;
 }
 
 .star:hover {
@@ -70,6 +70,7 @@
   align-items: flex-start;
   position: relative;
 }
+
 
 .card-provider-infos a:hover:first-child {
   color:black;
