@@ -1,6 +1,6 @@
 <div class="container-content">
   <div class="container-index">
-   <h1>Search Results</h1>
+   <h1>We found <%= @providers.count %> results</h1>
   <%#= render "shared/search_form", class:"search-form" %>
     <div class="cards-grid-index">
       <% unless @providers.empty? %>
@@ -12,8 +12,7 @@
       <% end %>
     </div>
   </div>
-  <%= render "shared/map" %>
+  <%= render "shared/map_index" %>
 </div>
-
 
 
