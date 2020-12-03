@@ -19,7 +19,8 @@ class Provider < ApplicationRecord
 
   def distance(coordinates)
     # returns distance in km, argument should be an address string
-    distance_to(coordinates).round(3) if coordinates
+    dist = distance_to(coordinates) if coordinates
+    dist.round(3) if dist
   end
 
   def has_recommendations?

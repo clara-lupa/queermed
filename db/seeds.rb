@@ -19,7 +19,8 @@ User.destroy_all
 PASSWORD = "123456"
 USERS = %w[igor dan magda clara ]
 SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Dermatologist Physiotherapist Dentist]
-ADDRESS = [ "Rudi-Dutschke-Str. 26, 10969 Berlin", "Sonnenallee 101, 12045 Berlin","Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Turmstr. 28, Berlin", "Goethestr. 33, Berlin", "Neue Hochstr. 14, Berlin", "Potsdamer Str. 55, Berlin", "Tempelhofer Damm 51, Berlin", "Sebastianstr. 14, Berlin", "Wildenbruchstr. 10, Berlin", "Selchower Str. 12, Berlin"]
+ADDRESS = ["Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Turmstr. 28, Berlin", "Goethestr. 33, Berlin", "Neue Hochstr. 14, Berlin", "Potsdamer Str. 55, Berlin", "Tempelhofer Damm 51, Berlin", "Sebastianstr. 14, Berlin", "Wildenbruchstr. 10, Berlin", "Selchower Str. 12, Berlin"]
+DEMO_ADDRESS = ["Unter den Linden 23, 10969 Berlin", "Zimmerstr. 55, 10117 Berlin", "Sonnenallee 101, 12045 Berlin", "Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin"]
 AVATAR_BASE_PATH = "avatar/avatar_0"
 AVATAR_SUFFIX = ".svg"
 
@@ -27,7 +28,7 @@ AVATAR_SUFFIX = ".svg"
 puts "Creating 20 random users"
 
 20.times do
-  name = Faker::Name.first_name
+  name = Faker::Name.female_first_name
   User.create(
     nickname: name,
     email: "#{name}@test.org",
@@ -70,7 +71,7 @@ last_names = ['Barris', 'Carter', 'Collins', 'Goldner']
       homepage: Faker::Internet.url,
       phone_number: "030/#{rand(10000000..99999999)}",
       specialty: "Gynecologist",
-      address: ADDRESS[i]
+      address: DEMO_ADDRESS[i]
     )
   reviewers = User.all.sample(reviews[i].length)
 
@@ -92,6 +93,24 @@ User.create!(
   password: PASSWORD,
   avatar: "avatar/avatar_07.svg"
   )
+puts "creating 10 more gynecologists"
+
+10.times do
+  provider = Provider.create!(
+    first_name: Faker::Name.first_name,
+    last_name: Faker::Name.last_name,
+    title: "Dr.",
+    homepage: Faker::Internet.url,
+    phone_number: "030/12345678",
+    specialty: "Gynecologist",
+    address: ADDRESS.sample,
+    )
+  number_of_recs = rand(6)
+  recommenders = User.all.sample(number_of_recs)
+  recommenders.each do |rec|
+    Review.create!(user: rec, provider: provider)
+  end
+end
 
 puts "creating 10 providers with 0-5 recommendations"
 
