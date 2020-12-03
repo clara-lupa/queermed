@@ -8,13 +8,15 @@
     <%= image_tag user.avatar %>
   </div>
   <p class="name"> <%= user.nickname %> </p>
-  <% if !session[:user_id].nil? && current_user.conversation?(user, @provider)  %>
+
+  <% if user_signed_in? && current_user.conversation?(user, @provider)  %>
     <%= link_to current_user.conversation?(user, @provider) do %>
       <p>  <i class="fas fa-envelope"></i></p>
     <% end %>
-  <% else %>
+  <% elsif user_signed_in? %>
     <%= link_to user_conversations_path(user, provider_id: @provider), method: :post do %>
       <p>  <i class="fas fa-envelope"></i></p>
     <% end %>
   <% end %>
+
 </div>

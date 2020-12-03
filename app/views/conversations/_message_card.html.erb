@@ -3,7 +3,7 @@
       <div class="message-card other">
         <div class="message-content">
           <p><%= message.content %> </p>
-          <p class="time"> <%= time_ago_in_words(message.created_at) %> </p>
+          <p class="time"> <%= time_ago_in_words(message.created_at) %> ago </p>
         </div>
         <%= render "conversations/user_details", user: message.user, displayed_name: message.user.nickname %>
       </div>
@@ -15,7 +15,7 @@
         <%= render "conversations/user_details", user: message.user, displayed_name: "You" %>
         <div class="message-content">
           <p><%= message.content %> </p>
-          <p class="time"> <%= time_ago_in_words(message.created_at) %> </p>
+          <p class="time"> <%= time_ago_in_words(message.created_at) %> ago </p>
         </div>
       </div>
     </div>

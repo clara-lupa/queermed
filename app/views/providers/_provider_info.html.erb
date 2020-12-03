@@ -16,14 +16,14 @@
       </div>
       <div class="provider-info-right">
 
-        <% if !session[:user_id].nil?  %>
+        <% if user_signed_in?  %>
           <% unless current_user.recommended?(provider) %>
             <button class="button-black" data-toggle="modal" data-target="#exampleModal">Recommendation</button>
           <% end %>
         <% else %>
           <div></div>
 
-       
+
         <% end %>
       </div>
     </div>
