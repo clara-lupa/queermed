@@ -14,7 +14,7 @@
     </div>
   </div>
 
-  <h1>Your conversation about <%= @conversation.provider.title %>  <%= @conversation.provider.first_name %>  <%= @conversation.provider.last_name %></h1>
+  <h1>Your conversation with <%= @conversation.other_user(current_user).nickname%> about <%= @conversation.provider.title %>  <%= @conversation.provider.first_name %>  <%= @conversation.provider.last_name %></h1>
 
   <%= render "new_message_form" %>
   <div id="messages" data-conversation-id= "<%= @conversation.id %>">
