@@ -1,5 +1,4 @@
 class ConversationsController < ApplicationController
-
   def create
     @conversation = Conversation.create(
       user1: current_user,
@@ -21,7 +20,6 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    # think about authentification here, only visible to users involved in that conversation
     @conversation = Conversation.find(params[:id])
     @message = Message.new
     session[:come_from_search] = false
