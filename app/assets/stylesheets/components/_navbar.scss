@@ -41,20 +41,47 @@ li.nav-item  {
   display: inline-block;
 }
 
-img#envelope-icon {
-    position: absolute;
-    top: 31px;
-    right: 35px;
-    width: 25px;
-    height: auto;
+#envelope-icon {
+  font-size: 1rem;
+  margin-right: 8px;
+  -webkit-animation: rainbow_message 45s infinite alternate;
+  animation: rainbow_message 45s infinite alternate;
+}
+
+@-webkit-keyframes rainbow_message
+{
+    0%    {  color: $purple; }
+    12.5% {  color: $blue; }
+    25%   {  color: $green; }
+    37.5% {  color: $orange;}
+    50%   {  color: $yellow; }
+    62.5% {  color: $red; }
+    75%   {  color: $brown; }
+    87.5% {  color: $baby-blue; }
+    100%  {  color: $pink; }
+}
+
+@keyframes rainbow_message {
+    0%    {  color: $purple; }
+    12.5% {  color: $blue; }
+    25%   {  color: $green; }
+    37.5% {  color: $orange;}
+    50%   {  color: $yellow; }
+    62.5% {  color: $red; }
+    75%   {  color: $brown; }
+    87.5% {  color: $baby-blue; }
+    100%  {  color: $pink; }
 }
 
 .navbar-nav p {
-  margin-top: 8px;
   margin-right: 20px;
 }
 
 .nav-links {
-  margin-left: 20px;
+  margin-left: 28px;
+}
+
+.navbar-nav.mr-auto {
+  align-items: center;
 }
 
