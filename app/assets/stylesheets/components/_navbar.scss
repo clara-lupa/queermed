@@ -16,7 +16,6 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  cursor: default;
 }
 
 .avatar.dropdown-toggle {
@@ -48,4 +47,13 @@ img#envelope-icon {
     right: 7px;
     width: 17px;
     height: auto;
+}
+
+.navbar-nav p {
+  margin-top: 8px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  margin-left: 20px;
 }
