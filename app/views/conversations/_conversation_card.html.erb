@@ -5,10 +5,10 @@
     <div class="conversation-content">
       <div class="conversation-info">
         <p> <strong> <%= conversation.provider.title %> <%= conversation.provider.first_name %> <%= conversation.provider.last_name %> </strong> -- <%= conversation.provider.specialty %>  </p>
-        <p> <%= time_ago_in_words(conversation.updated_at) %> </p>
+        <p> <%= time_ago_in_words(conversation.updated_at) %> ago </p>
       </div>
       <% if conversation.messages.present? %>
-        <div class="message-preview"> <%= conversation.messages.last.content %> ago </div>
+        <div class="message-preview"> <%= conversation.messages.first.content %> </div>
       <% end %>
     </div>
   <% end %>
