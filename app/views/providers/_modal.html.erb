@@ -1,22 +1,25 @@
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Thank you for recommending <%= @provider.title %> <%= @provider.first_name %> <%= @provider.last_name %>! Would you also like to leave a review?</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="modal-body-style">
-         <%= simple_form_for [ provider, review ],remote:false do |f| %>
-           <%= f.input :content, label: false, placeholder: "Type your review", input_html: {row: 10, class: "review-content"} %>
-           <div class="d-flex justify-content-between recomm-btn-container">
-             <button type="button" class="button-nav" data-dismiss="modal">Skip</button>
-             <%= f.submit "Submit review", class: "button-black" %>
-           </div>
-         <% end %>
+  <div class="vertical-alignment-helper">
+    <div class="modal-dialog vertical-align-center" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">You have recommended <%= @provider.title %> <%= @provider.first_name %> <%= @provider.last_name %>. Would you also like to leave a review?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="modal-body-style">
+           <%= simple_form_for [ provider, review ],remote:false do |f| %>
+             <%= f.input :content, label: false, placeholder: "Type your review", input_html: {row: 10, class: "review-content"} %>
+             <div class="d-flex justify-content-between recomm-btn-container">
+               <!-- <button type="button" class="button-black" data-dismiss="modal">Skip</button> -->
+               <%= f.submit "Skip", class: "button-nav" %>
+               <%= f.submit "Submit review", class: "button-black" %>
+             </div>
+           <% end %>
+          </div>
         </div>
       </div>
     </div>
