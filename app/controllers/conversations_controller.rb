@@ -8,8 +8,6 @@ class ConversationsController < ApplicationController
     )
 
     @conversation.save
-    # check if that conversation already exists --> validations?
-    # change to messages view or something?
     redirect_to conversation_path(@conversation)
   end
 
@@ -18,10 +16,10 @@ class ConversationsController < ApplicationController
     @user1_conversations = @user.user1_conversations
     @user2_conversations = @user.user2_conversations
     @conversations = @user1_conversations + @user2_conversations
+    @conversations.reject! { |con| con.messages.empty? }
   end
 
   def show
-    # think about authentification here, only visible to users involved in that conversation
     @conversation = Conversation.find(params[:id])
     @message = Message.new
     session[:come_from_search] = false
