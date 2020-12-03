@@ -16,13 +16,14 @@
 }
 
 .modal-content {
-    /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
-    width:inherit;
-    max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
-    height:inherit;
-    /* To center horizontally */
-    margin: 0 auto;
-    pointer-events: all;
+  /* Bootstrap sets the size of the modal in the modal-dialog class, we need to inherit it */
+  width:inherit;
+  max-width:inherit; /* For Bootstrap 4 - to avoid the modal window stretching full width */
+  height:inherit;
+  /* To center horizontally */
+  margin: 0 auto;
+  pointer-events: all;
+  box-shadow: 0px 0px 50px 0 rgba(229, 254, 2, 0.4) !important;
 }
 
 .modal-body-style {
@@ -30,7 +31,6 @@
     border: 2px solid black;
     resize: none;
     outline: none;
-    box-shadow: none;
     height: 250px;
   }
 }
