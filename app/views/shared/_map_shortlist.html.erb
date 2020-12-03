@@ -1,8 +1,7 @@
-<div class="sticky-container">
+<div class="sticky-container-shortlist">
   <div id="map"
      style="width: 100%"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <%= render "shared/search_form_index", class:"search-form" %>
 </div>
