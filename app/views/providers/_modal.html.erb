@@ -14,7 +14,7 @@
            <%= f.input :content, label: false, placeholder: "Type your review", input_html: {row: 10, class: "review-content"} %>
            <div class="d-flex justify-content-between recomm-btn-container">
              <button type="button" class="button-nav" data-dismiss="modal">Skip</button>
-             <%= f.submit "Submit review", class: "button-black" %>
+             <%= f.submit "Submit review", class: "button-black button-modal", disabled: true %>
            </div>
          <% end %>
         </div>

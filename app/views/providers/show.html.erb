@@ -19,4 +19,8 @@
 
 <%= render "modal", provider: @provider, review: @review  %>
 
-
+<script>
+  document.querySelector(".review-content").addEventListener("input", () => {
+    document.querySelector(".button-modal").disabled = false
+  })
+</script>

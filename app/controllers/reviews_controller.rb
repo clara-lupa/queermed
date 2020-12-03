@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to provider_path(@provider)
     else
-      render provider_path(@provider)
+      render "providers/show"
     end
   end
 
