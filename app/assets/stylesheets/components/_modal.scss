@@ -5,7 +5,7 @@
 
 .modal-body-style {
   textarea {
-    border: 2px solid black;
+    border: 1px solid black;
     resize: none;
     outline: none;
     box-shadow: none;
@@ -14,8 +14,17 @@
 }
 .recomm-btn-container {
   width: fit-content;
-  margin: 0 auto;
+  margin: 0 auto !important;
+  .button-black, .button-nav {
+    margin: 8px 10px;
+    width: 221.5px;
+  }
   .button-black {
-    margin: 8px 24px;
+    margin-right: 0px;
+  }
+  .button-nav {
+    margin-left: 0px;
   }
 }
+
+
