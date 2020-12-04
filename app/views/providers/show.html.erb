@@ -1,8 +1,12 @@
 
 <!-- has to be moved to a reasonable place once layout is done -->
-<% if session[:come_from_search] %>
-  <%= link_to "Back to search", @path_back, class: "button-nav show-back" %>
-<% end %>
+<div class="container nav-show">
+  <% if session[:come_from_search] %>
+    <div class="show-back">
+      <%= link_to "Back to search", @path_back, class: "button-nav" %>
+    </div>
+  <% end %>
+</div>
 
 <div class="container columns-container">
   <div class="show-left">

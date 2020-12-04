@@ -2,6 +2,10 @@ form {
   margin-bottom: 1rem;
 }
 
+.participants-container {
+  display: inline-block;
+  float: right
+}
 .participants {
   display: flex;
   justify-content: right;
@@ -12,21 +16,39 @@ form {
     padding: 0.5rem;
     padding-top: 0;
     width: unset;
+    float: right;
   }
 }
 
+.container.nav-conversation-show {
+  width: 70%;
+
+}
 .navigation {
-  display: flex;
-  align-items: top;
-  justify-content: space-between;
-  margin-bottom: 1rem;
-  .button-nav {
+  display: inline;
+  margin-left: 8px;
+  /*.button-nav {
     width: 11.3rem;
     margin-right: 0.3rem;
-  }
+  }*/
 }
 
 .conversations-container {
   margin-top: 64px;
 }
 
+.conversations-header {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.conversations-text {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  h1 {
+    display: inline-block;
+    margin: 0px !important;
+  }
+}
