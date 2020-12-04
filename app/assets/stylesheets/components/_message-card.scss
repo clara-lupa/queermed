@@ -5,11 +5,11 @@
 }
 
 .message-row.own {
-  justify-content: left;
+  justify-content: flex-start;
 }
 
 .message-row.other {
-  justify-content: right;
+  justify-content: flex-end;
 }
 
 .message-card {
