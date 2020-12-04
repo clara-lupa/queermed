@@ -1,10 +1,12 @@
-<div class="navigation">
-  <%= link_to conversations_path do %>
-    <button class="button-nav"> Go to inbox </button>
-  <% end %>
-  <%= link_to provider_path(@conversation.provider) do %>
-    <button class="button-nav"> Provider details </button>
-  <% end %>
+<div class="container nav-conversation-show">
+  <div class="navigation">
+    <%= link_to conversations_path do %>
+      <button class="button-nav"> Go to inbox </button>
+    <% end %>
+    <%= link_to provider_path(@conversation.provider) do %>
+      <button class="button-nav"> Provider details </button>
+    <% end %>
+  </div>
 </div>
 <div class="container conversations-container">
   <div class="conversations-header">
