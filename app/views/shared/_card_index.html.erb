@@ -7,7 +7,7 @@
         <%= image_tag "star_filled.svg", class: "star-index" %>
     <% end %>
     <% if @coordinates %>
-      <p><%= provider.distance(@coordinates).round(1) %>km</p>
+      <p class="distance-counter"><%= provider.distance(@coordinates).round(1) %>km</p>
     <% end %>
     <p class="people-icon"> <%= provider.reviews.count %> <%= image_tag "people.svg" %></p>
   </div>
