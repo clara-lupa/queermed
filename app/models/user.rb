@@ -14,7 +14,7 @@ class User < ApplicationRecord
   validates :avatar, presence: true
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+    :recoverable, :rememberable, :validatable
 
   def conversation?(other_user, provider)
     # return the conversation the user instance has with other_user about provider

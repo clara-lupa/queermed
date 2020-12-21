@@ -10,7 +10,6 @@ class Provider < ApplicationRecord
   has_many :shortlists, dependent: :destroy
   has_many :users, through: :shortlists
 
-
   def shortlisted(user)
     if users.include?(user)
       shortlists.find_by(user: user)
