@@ -17,16 +17,8 @@ class ConversationsController < ApplicationController
       .includes(:user1, :user2)
       .joins(:messages)
       .distinct
-      .where(["user1_id = :id OR user2_id = :id", { id: current_user.id.to_s }])
+      .where(["user1_id = :id OR user2_id = :id", { id: @user.id.to_s }])
       .order("updated_at")
-
-    # doesnt work with join cause that lists each conversation one more time per message...
-
-    # @user1_conversations = @user.user1_conversations
-    # @user2_conversations = @user.user2_conversations
-    # @conversations = @user1_conversations + @user2_conversations
-    # @conversations.reject! { |con| con.messages.empty? }
-    # @conversations.sort_by! { |con| con.messages.last.created_at }
   end
 
   def show
