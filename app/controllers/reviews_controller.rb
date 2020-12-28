@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
-
-    def create
+  def create
     @review = Review.new(review_params)
     @review.user = current_user
     @provider = Provider.find(params[:provider_id])
@@ -20,7 +19,6 @@ class ReviewsController < ApplicationController
     @review = Review.find(params[:id])
     @review.destroy
   end
-
 
   private
 

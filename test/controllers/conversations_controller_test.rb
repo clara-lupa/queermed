@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ConversationsControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
@@ -20,5 +20,4 @@ class ConversationsControllerTest < ActionDispatch::IntegrationTest
     get conversations_show_url
     assert_response :success
   end
-
 end

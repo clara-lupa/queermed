@@ -13,13 +13,13 @@ class ProvidersController < ApplicationController
       @providers = Provider.all
     end
 
-    @markers = @providers.geocoded.map do |provider|
+    @markers = @providers.geocoded.map { |provider|
       {
         lat: provider.latitude,
         lng: provider.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { provider: provider })
+        infoWindow: render_to_string(partial: "info_window", locals: {provider: provider})
       }
-    end
+    }
 
     if params[:location]
       geocoded_location = Geocoder.search(@location)
@@ -35,8 +35,8 @@ class ProvidersController < ApplicationController
     @street = @provider.address.gsub(regex_remove_city, "")
     @city = @provider.address.gsub(regex_remove_street, "")
     @review = Review.new
-    @reviews = @provider.reviews.order({ created_at: :desc })
-    @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
+    @reviews = @provider.reviews.order({created_at: :desc})
+    @markers = [{lat: @provider.latitude, lng: @provider.longitude}]
     @path_back = session[:last_search] || providers_path
   end
 
@@ -64,4 +64,3 @@ class ProvidersController < ApplicationController
     params.require(:provider).permit(:title, :first_name, :last_name, :specialty, :homepage, :email, :phone_number, :address)
   end
 end
-
