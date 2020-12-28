@@ -1,34 +1,15 @@
 # QUEERMED.INFO
 
-queermed.info is a database of queer sensitive healthcare providers.
-
-## features
-<font size="5">🌐</font> A visitor is anyone visiting the application 
-
-<font size="5">🔐</font> A User is signed in
-
-<font size="5">🔎</font> Visitors can search for a healthcare provider
-
-<font size="5">👀</font> Visitors can view details about provider 
-
-<font size="5">🧑‍🤝‍🧑</font> Users can see reviews about providers
-
-<font size="5">📝</font> Users can write reviews about a provider  
-
-<font size="5">💬</font> Users can write each other private messages
-
-<font size="5">👍</font> Users can add a doctor to their favorites list 
-
-<font size="5">👩‍⚕️</font> Users can add a new doctor to the database 
+[queermed.info](http://www.queermed.info) is a database of queer sensitive healthcare providers, where users can add providers and review them with the possibility to send private messages to each other.
 
 ## Features
-* Search with autocomplete of location
-* Show providers on map
-* Sign-up and sign-in
-* Write a review
-* Personal favorites list
-* Chat with other Users
-* Add healthcare provider
+<font size="5">🔎</font> Search with autocomplete of location<br>
+<font size="5">🌐</font> Show providers on map<br>
+<font size="5">🔐</font>  Sign-up and sign-in<br>
+<font size="5">📝</font>  Write a review<br>
+<font size="5">:star:</font> Personal favorites list<br>
+<font size="5">💬</font> Private messages with other Users<br>
+<font size="5">👩‍⚕️</font> Add healthcare provider
 
 ## Technologies
 * Rails 6
