@@ -1,5 +1,5 @@
 class Message < ApplicationRecord
-  belongs_to :conversation
+  belongs_to :conversation, touch: true
   belongs_to :user
   validates :conversation, :user, :content, presence: true
   validate :sender_must_be_in_conversation, if: :user && :conversation

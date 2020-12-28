@@ -12,11 +12,13 @@ class ConversationsController < ApplicationController
 
   def index
     @user = current_user
-    @user1_conversations = @user.user1_conversations
-    @user2_conversations = @user.user2_conversations
-    @conversations = @user1_conversations + @user2_conversations
-    @conversations.reject! { |con| con.messages.empty? }
-    @conversations.sort_by! { |con| con.messages.last.created_at }
+    @conversations =
+      Conversation
+      .includes(:user1, :user2)
+      .joins(:messages)
+      .distinct
+      .where(["user1_id = :id OR user2_id = :id", { id: @user.id.to_s }])
+      .order("updated_at")
   end
 
   def show
