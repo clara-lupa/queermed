@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-require 'faker'
+require "faker"
 
 Conversation.destroy_all
 Message.destroy_all
@@ -15,15 +15,13 @@ Review.destroy_all
 Provider.destroy_all
 User.destroy_all
 
-
 PASSWORD = "123456"
-USERS = %w[igor dan magda clara ]
+USERS = %w[igor dan magda clara]
 SPECIALTIES = %w[Psychotherapist Psychotherapist Psychotherapist Psychologist Psychologist Psychologist Dermatologist Physiotherapist Dentist]
 ADDRESS = ["Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin", "Turmstr. 28, Berlin", "Goethestr. 33, Berlin", "Neue Hochstr. 14, Berlin", "Potsdamer Str. 55, Berlin", "Tempelhofer Damm 51, Berlin", "Sebastianstr. 14, Berlin", "Wildenbruchstr. 10, Berlin", "Selchower Str. 12, Berlin"]
 DEMO_ADDRESS = ["Unter den Linden 23, 10969 Berlin", "Zimmerstr. 55, 10117 Berlin", "Sonnenallee 101, 12045 Berlin", "Anzengruberstr. 10, 12043 Berlin", "Kienitzerstr. 101, 12053 Berlin"]
 AVATAR_BASE_PATH = "avatar/avatar_0"
 AVATAR_SUFFIX = ".svg"
-
 
 puts "Creating 20 random users"
 
@@ -33,10 +31,9 @@ puts "Creating 20 random users"
     nickname: name,
     email: "#{name}@test.org",
     password: PASSWORD,
-    avatar: AVATAR_BASE_PATH + (rand(6) + 1).to_s + AVATAR_SUFFIX
-    )
+    avatar: AVATAR_BASE_PATH + rand(1..6).to_s + AVATAR_SUFFIX
+  )
 end
-
 
 reviews = []
 reviews << [
@@ -44,9 +41,8 @@ reviews << [
   "She really explained every step to me in detail, I liked that a lot.",
   "Overall a good experience. I was really happy that they called me with the correct pronoun.
   Not many other gynecologists do that from my experiences...",
-    "", "", ""
+  "", "", ""
 ]
-
 
 reviews << [
   "I came here a couple of times to get prescriptions and check-ups. Dr. Carter seems to be very empathic, she took more than enough time for me and I felt quite comfortable with her.",
@@ -61,18 +57,18 @@ reviews << [""]
 
 puts "creating 4 demo providers"
 
-first_names = ['Kim', 'Susan', 'Jo', 'Michael']
-last_names = ['Barris', 'Carter', 'Collins', 'Goldner']
+first_names = ["Kim", "Susan", "Jo", "Michael"]
+last_names = ["Barris", "Carter", "Collins", "Goldner"]
 4.times do |i|
   prov = Provider.create!(
-      first_name: first_names[i],
-      last_name: last_names[i],
-      title: "Dr.",
-      homepage: Faker::Internet.url,
-      phone_number: "030/#{rand(10000000..99999999)}",
-      specialty: "Gynecologist",
-      address: DEMO_ADDRESS[i]
-    )
+    first_name: first_names[i],
+    last_name: last_names[i],
+    title: "Dr.",
+    homepage: Faker::Internet.url,
+    phone_number: "030/#{rand(10000000..99999999)}",
+    specialty: "Gynecologist",
+    address: DEMO_ADDRESS[i]
+  )
   reviewers = User.all.sample(reviews[i].length)
 
   reviews[i].each_with_index do |content, index|
@@ -80,10 +76,9 @@ last_names = ['Barris', 'Carter', 'Collins', 'Goldner']
       provider: prov,
       user: reviewers[index],
       content: content
-      )
+    )
   end
 end
-
 
 puts "creating demo user"
 
@@ -92,7 +87,7 @@ User.create!(
   email: "jessi.xyz@riseup.net",
   password: PASSWORD,
   avatar: "avatar/avatar_07.svg"
-  )
+)
 puts "creating 10 more gynecologists"
 
 10.times do
@@ -103,8 +98,8 @@ puts "creating 10 more gynecologists"
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
     specialty: "Gynecologist",
-    address: ADDRESS.sample,
-    )
+    address: ADDRESS.sample
+  )
   number_of_recs = rand(6)
   recommenders = User.all.sample(number_of_recs)
   recommenders.each do |rec|
@@ -122,8 +117,8 @@ puts "creating 10 providers with 0-5 recommendations"
     homepage: Faker::Internet.url,
     phone_number: "030/12345678",
     specialty: SPECIALTIES.sample,
-    address: ADDRESS.sample,
-    )
+    address: ADDRESS.sample
+  )
   number_of_recs = rand(6)
   recommenders = User.all.sample(number_of_recs)
   recommenders.each do |rec|
@@ -138,10 +133,9 @@ USERS.each do |user|
     nickname: user,
     email: "#{user}@test.org",
     password: PASSWORD,
-    avatar: AVATAR_BASE_PATH + (rand(6) + 1).to_s + AVATAR_SUFFIX
-    )
+    avatar: AVATAR_BASE_PATH + rand(1..6).to_s + AVATAR_SUFFIX
+  )
 end
-
 
 # puts "creating 30 reviews"
 # 30.times do
@@ -152,6 +146,3 @@ end
 #     )
 # end
 puts "finished"
-
-
-

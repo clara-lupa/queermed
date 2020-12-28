@@ -6,23 +6,33 @@ class MessagesController < ApplicationController
       conversation: Conversation.find(params[:conversation_id])
     )
 
+    broadcast_to_conversation_channel(@message)
+    broadcast_to_notifications_channel(@message)
+
+    redirect_back(fallback_location: conversations_path)
+  end
+
+  private
+
+  def broadcast_to_conversation_channel(message)
     ConversationChannel.broadcast_to(
-      @message.conversation,
+      message.conversation,
       nonSenderPartial: render_to_string(
         partial: "conversations/message_card",
-        locals: { message: @message, other: true }
+        locals: { message: message, other: true }
       ),
       senderPartial: render_to_string(
         partial: "conversations/message_card",
-        locals: { message: @message, other: false }
+        locals: { message: message, other: false }
       ),
-      senderId: @message.user.id.to_s
+      senderId: message.user.id.to_s
     )
+  end
+
+  def broadcast_to_notifications_channel(message)
     NotificationsChannel.broadcast_to(
-      @message.conversation.other_user(current_user),
+      message.conversation.other_user(current_user),
       message: "hooray!"
     )
-
-    redirect_back(fallback_location: conversations_path)
   end
 end

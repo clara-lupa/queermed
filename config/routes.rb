@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-
   devise_for :users
-  root to: 'pages#home'
+  root to: "pages#home"
 
-  resources :providers, only: [:index, :show, :new, :create ] do
+  resources :providers, only: [:index, :show, :new, :create] do
     resources :shortlists, only: :create
     resources :reviews, only: [:create, :update, :destroy]
   end
@@ -23,6 +22,5 @@ Rails.application.routes.draw do
   get "/favorites/:id/provider/:provider_id", to: "shortlists#favorites"
   get "inbox", to: "conversations#index", as: :conversations
 
-  mount ActionCable.server => '/cable'
-
+  mount ActionCable.server => "/cable"
 end

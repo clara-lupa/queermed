@@ -15,10 +15,10 @@ class ShortlistsController < ApplicationController
     provider = Provider.find(params[:provider_id])
     if favorite.present?
       favorite.destroy
-      render json: { message: "favorite deleted"}
+      render json: {message: "favorite deleted"}
     else
       Shortlist.create!(provider: provider, user: current_user)
-      render json: { message: "favorite created"}
+      render json: {message: "favorite created"}
     end
   end
 end

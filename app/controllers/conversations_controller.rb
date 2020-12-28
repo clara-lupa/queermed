@@ -16,7 +16,7 @@ class ConversationsController < ApplicationController
     @user2_conversations = @user.user2_conversations
     @conversations = @user1_conversations + @user2_conversations
     @conversations.reject! { |con| con.messages.empty? }
-    @conversations.sort_by! {|con| con.messages.last.created_at}
+    @conversations.sort_by! { |con| con.messages.last.created_at }
   end
 
   def show

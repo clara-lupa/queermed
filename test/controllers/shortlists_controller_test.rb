@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ShortlistsControllerTest < ActionDispatch::IntegrationTest
   test "should get create_shortlist" do
@@ -10,5 +10,4 @@ class ShortlistsControllerTest < ActionDispatch::IntegrationTest
     get shortlists_destroy_shortlist_url
     assert_response :success
   end
-
 end
