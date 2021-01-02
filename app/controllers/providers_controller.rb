@@ -8,7 +8,7 @@ class ProvidersController < ApplicationController
     session[:come_from_search] = true
     if params[:query].present?
       sql_query = "first_name ILIKE :query OR last_name ILIKE :query OR title ILIKE :query OR specialty ILIKE :query"
-      @providers = Provider.where(sql_query, query: "%#{params[:query]}%")
+      @providers = Provider.includes(:users, :reviews).where(sql_query, query: "%#{params[:query]}%")
     else
       @providers = Provider.all
     end
@@ -29,14 +29,15 @@ class ProvidersController < ApplicationController
   end
 
   def show
-    @provider = Provider.find(params[:id])
+    @provider = Provider.includes(reviews: :user).find(params[:id])
     regex_remove_city = /,\s.*/
     regex_remove_street = /.*,\s/
     @street = @provider.address.gsub(regex_remove_city, "")
     @city = @provider.address.gsub(regex_remove_street, "")
     @review = Review.new
-    @reviews = @provider.reviews.order({created_at: :desc})
-    @markers = [{lat: @provider.latitude, lng: @provider.longitude}]
+    @reviews = @provider.reviews.order({ created_at: :desc })
+    @reviewing_users = @provider.reviews.map(&:user)
+    @markers = [{ lat: @provider.latitude, lng: @provider.longitude }]
     @path_back = session[:last_search] || providers_path
   end
 

@@ -9,13 +9,16 @@
   </div>
   <p class="name"> <%= user.nickname %> </p>
 
-  <% if user_signed_in? && current_user.conversation?(user, @provider)  %>
-    <%= link_to current_user.conversation?(user, @provider) do %>
-      <p>  <i class="fas fa-envelope"></i></p>
-    <% end %>
-  <% elsif user_signed_in? %>
-    <%= link_to user_conversations_path(user, provider_id: @provider), method: :post do %>
-      <p>  <i class="fas fa-envelope"></i></p>
+  <% if user_signed_in? %>
+    <% conversation =  Conversation.find_by(["(user1_id = :id OR user2_id= :id) AND provider_id = :provider_id", { id: current_user.id.to_s, provider_id: @provider.id.to_s}])%>
+    <% if conversation %>
+      <%= link_to conversation do %>
+        <p>  <i class="fas fa-envelope"></i></p>
+      <% end %>
+    <% else%>
+      <%= link_to user_conversations_path(user, provider_id: @provider), method: :post do %>
+        <p>  <i class="fas fa-envelope"></i></p>
+      <% end %>
     <% end %>
   <% end %>
 

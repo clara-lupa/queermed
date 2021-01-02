@@ -1,7 +1,9 @@
     <div class="provider-info">
       <div class="shortlisted">
         <% if provider.shortlisted(current_user) %>
-          <%= link_to "", data: {provider_id: provider.id, favorite_id: provider.shortlisted(current_user).id}, class: "star full", remote: true do %>
+          <%= link_to "", data: {provider_id: provider.id, favorite_id: Shortlist.find_by(user: current_user, provider: provider).id},
+            class: "star full",
+              remote: true do %>
             <i class="fas fa-star"></i>
           <% end %>
         <% else %>
@@ -17,14 +19,13 @@
       <div class="provider-info-right">
 
         <% if user_signed_in?  %>
-          <% unless current_user.recommended?(provider) %>
+          <% unless @reviewing_users.include? current_user %>
             <button class="button-black" data-toggle="modal" data-target="#exampleModal">Recommend</button>
           <% end %>
         <% else %>
           <div></div>
-
-
         <% end %>
+
       </div>
     </div>
 
