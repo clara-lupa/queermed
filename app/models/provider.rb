@@ -11,9 +11,8 @@ class Provider < ApplicationRecord
   has_many :users, through: :shortlists
 
   def shortlisted(user)
-    if users.include?(user)
-      shortlists.find_by(user: user)
-    end
+    # returns whether this provider is shortlisted by the user passed as an argument
+    return users.include?(user)
   end
 
   def distance(coordinates)

@@ -9,7 +9,7 @@
     <% if @coordinates %>
       <p class="distance-counter"><%= provider.distance(@coordinates).round(1) %>km</p>
     <% end %>
-    <p class="people-icon"> <%= provider.reviews.count %> <%= image_tag "people.svg" %></p>
+    <p class="people-icon"> <%= provider.reviews.length %> <%= image_tag "people.svg" %></p>
   </div>
 </div>
 <% end %>

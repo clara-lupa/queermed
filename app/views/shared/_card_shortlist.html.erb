@@ -3,7 +3,7 @@
     <h2><%= provider.title %> <%= provider.first_name %> <%=provider.last_name %></h2>
     <h6><%= provider.specialty %></h6>
     <% if provider.shortlisted(current_user) %>
-        <%= link_to "", data: {provider_id: provider.id, favorite_id: provider.shortlisted(current_user).id}, class: "star full", remote: true do %>
+        <%= link_to "", data: {provider_id: provider.id, favorite_id: Shortlist.find_by(user: current_user, provider: provider).id}, class: "star full", remote: true do %>
           <i class="fas fa-star" ></i>
         <% end %>
     <% else %>

@@ -16,22 +16,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
     :recoverable, :rememberable, :validatable
 
-  def conversation?(other_user, provider)
-    # return the conversation the user instance has with other_user about provider
-    # or false/nil if the instance has no such conversation yet
-    return false unless (user2s + user1s).include? other_user
-
-    if user2s.include? other_user
-      user1_conversations.find do |conversation|
-        conversation.user2 == other_user && conversation.provider == provider
-      end
-    else
-      user2_conversations.find do |conversation|
-        conversation.user1 == other_user && conversation.provider == provider
-      end
-    end
-  end
-
   def recommended?(provider)
     reviews.find { |review| review.provider == provider }
   end
