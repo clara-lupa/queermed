@@ -1,14 +1,16 @@
 class Provider < ApplicationRecord
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  has_many :reviews, dependent: :destroy
+  has_many :shortlists, dependent: :destroy
+  has_many :users, through: :shortlists
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :specialty, presence: true
   validates :address, presence: true
 
-  has_many :reviews, dependent: :destroy
-  has_many :shortlists, dependent: :destroy
-  has_many :users, through: :shortlists
+  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
+
 
   def shortlisted(user)
     # returns whether this provider is shortlisted by the user passed as an argument
